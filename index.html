@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outpacers • Brand Style Kit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Ubuntu','Cantarell','Noto Sans','Helvetica Neue','Arial','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root{
+      --ink:#0E1116;
+      --body:#4B5563;
+      --white:#FFFFFF;
+      --header:#0C0F14;
+
+      --primary:#6F3FF5;
+      --primary-hover:#7C55FF;
+      --primary-press:#4A2BD1;
+
+      --grad-blue:#3A98FD;
+      --grad-purple:#6F3FF5;
+
+      --chartreuse:#DDF700; /* choose and standardize */
+
+      --chip-bg:#FFFFFF;
+      --hairline:#E5E7EB;
+      --muted:#6B7280;
+      --logo-gray:#A3A8B3;
+      --soft-bg:#F6F7FB;
+
+      --strip-bg:#EEE7FF;
+      --strip-text:#4A2BD1;
+
+      --shadow:0 10px 30px rgba(0,0,0,.06);
+      --radius-card:16px;
+    }
+    html,body{color:var(--body)}
+    .ink{color:var(--ink)}
+    .brand-gradient{background:linear-gradient(90deg,var(--grad-blue),var(--grad-purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .chartreuse-slab{background:var(--chartreuse);color:var(--ink);border-radius:10px;padding:2px 8px;display:inline-flex;align-items:center;gap:6px}
+    .btn{border-radius:9999px;padding:12px 18px;font-weight:700}
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-primary:hover{background:var(--primary-hover)}
+    .btn-primary:focus{outline:3px solid var(--primary-press);outline-offset:2px}
+    .btn-register{background:var(--chartreuse);color:var(--ink)}
+    .btn{transition:transform .12s ease, box-shadow .12s ease}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 6px 20px rgba(0,0,0,.08)}
+    .btn:active{transform:translateY(0); box-shadow:none}
+    .btn[disabled]{opacity:.5;cursor:not-allowed}
+    .btn-secondary{background:var(--white);border:1px solid var(--primary);color:var(--primary)}
+    .btn-secondary:hover{background:#F5EFFF}
+    .btn-register:hover{filter:brightness(0.94)}
+    .token{border:1px solid var(--hairline);border-radius:12px;box-shadow:var(--shadow)}
+    .swatch{border-radius:12px;border:1px solid var(--hairline)}
+    .badge{background:#F4F6FA;border:1px solid #E5E7EF;color:var(--ink);border-radius:999px;padding:6px 10px;font-size:.8rem}
+    .chip{background:var(--chip-bg);border:1px solid var(--hairline);border-radius:16px;padding:14px 16px;display:flex;gap:10px;align-items:center}
+    .label{font-size:.8rem;color:var(--muted)}
+    .logo-slot{border:1px dashed var(--hairline);border-radius:12px;min-height:140px;display:flex;align-items:center;justify-content:center}
+    .h-card{border-radius:var(--radius-card);box-shadow:var(--shadow)}
+    .grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .copy{cursor:pointer}
+  .has-tt{position:relative}
+    .has-tt::after{content:attr(data-tooltip);position:absolute;bottom:125%;left:50%;transform:translateX(-50%) translateY(4px);opacity:0;background:#0E1116;color:#fff;padding:4px 8px;border-radius:6px;white-space:nowrap;pointer-events:none;transition:all .12s ease;border:1px solid rgba(255,255,255,.12);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+    .has-tt:hover::after{opacity:1;transform:translateX(-50%) translateY(0)}
+    .slab-curve{position:relative;background:var(--chartreuse);color:var(--ink);border-radius:12px;padding:6px 44px 6px 14px;display:inline-flex;align-items:center;margin:0 10px}
+    .slab-curve .bolt{position:absolute;right:12px;top:50%;transform:translateY(-50%)}
+  .has-tt{position:relative}
+    .has-tt::after{content:attr(data-tooltip);position:absolute;bottom:125%;left:50%;transform:translateX(-50%) translateY(4px);opacity:0;background:#0E1116;color:#fff;padding:4px 8px;border-radius:6px;white-space:nowrap;pointer-events:none;transition:all .12s ease;border:1px solid rgba(255,255,255,.12);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+    .has-tt:hover::after{opacity:1;transform:translateX(-50%) translateY(0)}
+    .slab-curve{position:relative;background:var(--chartreuse);color:var(--ink);border-radius:12px;padding:6px 44px 6px 14px;display:inline-flex;align-items:center;margin:0 10px}
+    .slab-curve .bolt{position:absolute;right:12px;top:50%;transform:translateY(-50%)}
+    .logo-img{max-height:112px;object-fit:contain}
+    .mono-dark{filter:grayscale(1) brightness(0) saturate(100%)}
+  </style>
+</head>
+<body class="bg-white font-sans">
+  <!-- Header -->
+  <header class="bg-[var(--header)] text-white">
+    <div class="mx-auto max-w-[1200px] px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-W-transparent.png" alt="Outpacers" class="h-8 sm:h-9 object-contain"/>
+      </div>
+      <nav class="hidden sm:flex items-center gap-6 text-sm opacity-90">
+        <a class="hover:opacity-100" href="#logos">Logos</a>
+        <a class="hover:opacity-100" href="#colors">Colors</a>
+        <a class="hover:opacity-100" href="#type">Typography</a>
+        <a class="hover:opacity-100" href="#components">Components</a>
+      </nav>
+      <button class="btn btn-register">Download Kit</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-[1200px] px-6 pt-12 pb-6">
+    <p class="badge inline-flex items-center gap-2">Brand Kit • v1.0</p>
+    <h1 class="mt-5 ink text-5xl md:text-6xl font-extrabold leading-tight">
+      With <span class="brand-gradient">Embedded AI</span>,<br/>
+      you can simplify learning <span class="slab-curve">curve
+        <svg class="bolt" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
+        </svg>
+      </span>
+    </h1>
+    <p class="mt-4 max-w-2xl text-lg">This single page renders real tokens, components, and examples so designers, engineers, and marketing can build consistently—no guessing.</p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <button class="btn btn-primary">Primary CTA</button>
+      <button class="btn btn-register">Register (Chartreuse)</button>
+    </div>
+  </section>
+
+  <!-- Logo section -->
+  <section id="logos" class="mx-auto max-w-[1200px] px-6 py-10">
+    <div class="h-card p-6 bg-white">
+      <div class="flex items-end justify-between gap-4 flex-wrap">
+        <h2 class="ink text-3xl font-extrabold">Logo System</h2>
+        <span class="label">Linked PNG assets for pixel-perfect rendering. Monochrome generated via CSS filter.</span>
+      </div>
+      <div class="mt-6 grid-auto">
+        <div class="token p-4">
+          <h3 class="font-semibold ink">Default Lockup (Dark on Light)</h3>
+          <div class="logo-slot mt-3 bg-white">
+            <img class="logo-img" loading="lazy" alt="Outpacers dark wordmark with green arrow" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-B-transparent.png"/>
+          </div>
+        </div>
+        <div class="token p-4">
+          <h3 class="font-semibold ink">White on Black</h3>
+          <div class="logo-slot mt-3 bg-black">
+            <img class="logo-img" loading="lazy" alt="Outpacers white wordmark with green arrow on black" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-W-transparent.png"/>
+          </div>
+        </div>
+        <div class="token p-4">
+          <h3 class="font-semibold ink">Monochrome (Dark) — CSS</h3>
+          <div class="logo-slot mt-3 bg-[var(--soft-bg)]">
+            <img class="logo-img mono-dark" loading="lazy" alt="Outpacers monochrome dark lockup generated via CSS filter" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-B-transparent.png"/>
+          </div>
+        </div>
+        <div class="token p-4">
+          <h3 class="font-semibold ink">Arrow Mark – App Icon / Favicon</h3>
+          <div class="logo-slot mt-3 bg-white">
+            <img class="logo-img" loading="lazy" alt="Outpacers green arrow mark" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Arrow-Green-BGTransparent-L.png"/>
+          </div>
+          <p class="mt-3 text-sm text-[var(--muted)]">Use for app icons, favicons, avatars. Recommended 180×180 for Apple Touch; 32×32/16×16 for favicons.</p>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-[var(--muted)]">Clear-space: 1× the height of the mark on all sides. Minimum digital size: 24px height.</p>
+    </div>
+  </section>
+
+  <!-- Colors -->
+  <section id="colors" class="mx-auto max-w-[1200px] px-6 py-10">
+    <h2 class="ink text-3xl font-extrabold">Color System</h2>
+    <p class="mt-2 text-[var(--muted)]">Live tokens + copy-to-clipboard. Click a hex to copy.</p>
+
+    <div class="mt-6 grid-auto">
+      <!-- Primary Purple -->
+      <div class="token p-4">
+        <div class="swatch h-28 w-full bg-[var(--primary)]"></div>
+        <div class="mt-3 flex items-center justify-between">
+          <div>
+            <div class="ink font-semibold">Primary Purple</div>
+            <div class="label">Buttons, links, key accents</div>
+          </div>
+          <button class="copy text-sm font-mono" data-hex="--primary">#6F3FF5</button>
+        </div>
+        <div class="mt-3"><button class="btn btn-primary">Primary CTA</button></div>
+      </div>
+
+      <!-- Primary Hover -->
+      <div class="token p-4">
+        <div class="swatch h-28 w-full bg-[var(--primary-hover)]"></div>
+        <div class="mt-3 flex items-center justify-between">
+          <div>
+            <div class="ink font-semibold">Primary Hover</div>
+            <div class="label">Interactive hover</div>
+          </div>
+          <button class="copy text-sm font-mono" data-hex="--primary-hover">#7C55FF</button>
+        </div>
+        <div class="mt-3"><button class="btn btn-secondary">Secondary (Outline)</button></div>
+      </div>
+
+      <!-- Primary Press / Focus -->
+      <div class="token p-4">
+        <div class="swatch h-28 w-full bg-[var(--primary-press)]"></div>
+        <div class="mt-3 flex items-center justify-between">
+          <div>
+            <div class="ink font-semibold">Primary Press/Focus</div>
+            <div class="label">Pressed state & focus rings</div>
+          </div>
+          <button class="copy text-sm font-mono" data-hex="--primary-press">#4A2BD1</button>
+        </div>
+        <div class="mt-3"><button class="btn btn-primary" style="outline:4px solid var(--primary-press);outline-offset:2px">Focus Ring Demo</button></div>
+      </div>
+
+      <!-- Chartreuse -->
+      <div class="token p-4">
+        <div class="swatch h-28 w-full bg-[var(--chartreuse)]"></div>
+        <div class="mt-3 flex items-center justify-between">
+          <div>
+            <div class="ink font-semibold">Chartreuse Highlight</div>
+            <div class="label">Register button & slab highlight</div>
+          </div>
+          <button class="copy text-sm font-mono" data-hex="--chartreuse">#DDF700</button>
+        </div>
+        <div class="mt-3"><button class="btn btn-register">Register</button></div>
+      </div>
+
+      <!-- Gradient Accent -->
+      <div class="token p-4 col-span-full">
+        <div class="swatch h-28 w-full" style="background:linear-gradient(90deg,var(--grad-blue),var(--grad-purple))"></div>
+        <div class="mt-3 flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <div class="ink font-semibold">Gradient Accent</div>
+            <div class="label">Blue → Purple for single-word emphasis</div>
+          </div>
+          <div class="text-sm font-mono flex gap-4">
+            <button class="copy" data-raw="#3A98FD">#3A98FD</button>
+            <button class="copy" data-raw="#6F3FF5">#6F3FF5</button>
+          </div>
+        </div>
+        <div class="mt-5 ink text-4xl md:text-5xl font-extrabold leading-tight">
+          <span class="brand-gradient">Outthink</span> <span class="ink">Everyone</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="ink text-xl font-bold mt-10">Neutrals & Surfaces</h3>
+    <div class="mt-4 grid-auto">
+      <div class="token p-4"><div class="swatch h-16 w-full bg-[var(--header)]"></div><div class="mt-2 flex items-center justify-between"><span class="ink font-semibold">Header</span><button class="copy text-sm font-mono" data-raw="#0C0F14">#0C0F14</button></div></div>
+      <div class="token p-4"><div class="swatch h-16 w-full bg-[var(--ink)]"></div><div class="mt-2 flex items-center justify-between"><span class="ink font-semibold">Ink</span><button class="copy text-sm font-mono" data-raw="#0E1116">#0E1116</button></div></div>
+      <div class="token p-4"><div class="swatch h-16 w-full bg-[var(--hairline)]"></div><div class="mt-2 flex items-center justify-between"><span class="ink font-semibold">Hairline Border</span><button class="copy text-sm font-mono" data-raw="#E5E7EB">#E5E7EB</button></div></div>
+      <div class="token p-4"><div class="swatch h-16 w-full bg-[var(--soft-bg)]"></div><div class="mt-2 flex items-center justify-between"><span class="ink font-semibold">Soft Section BG</span><button class="copy text-sm font-mono" data-raw="#F6F7FB">#F6F7FB</button></div></div>
+      <div class="token p-4"><div class="swatch h-16 w-full bg-[var(--strip-bg)]"></div><div class="mt-2 flex items-center justify-between"><span class="ink font-semibold">Promo Strip</span><button class="copy text-sm font-mono" data-raw="#EEE7FF">#EEE7FF</button></div></div>
+      <div class="token p-4"><div class="swatch h-16 w-full" style="background:var(--logo-gray)"></div><div class="mt-2 flex items-center justify-between"><span class="ink font-semibold">Partner Logo Gray</span><button class="copy text-sm font-mono" data-raw="#A3A8B3">#A3A8B3</button></div></div>
+    </div>
+  </section>
+
+  <!-- Typography -->
+  <section id="type" class="mx-auto max-w-[1200px] px-6 py-10">
+    <h2 class="ink text-3xl font-extrabold">Typography</h2>
+    <p class="mt-2 label">Family: Inter (Regular, Medium, Semibold, Bold, ExtraBold) + Italics.</p>
+
+    <div class="token p-6 mt-6">
+      <div class="ink text-5xl md:text-6xl font-extrabold leading-tight">Everything you <span class="brand-gradient">ace</span> to nail your interview</div>
+      <p class="mt-3 text-lg">Lead (18/1.6): Clear, encouraging, high-trust. Keep line length ~68ch for readability.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="ink font-extrabold text-2xl">Inter ExtraBold 800</div>
+          <p class="mt-1">The quick brown fox jumps over the lazy dog 0123456789</p>
+        </div>
+        <div>
+          <div class="ink font-bold text-2xl">Inter Bold 700</div>
+          <p class="mt-1">The quick brown fox jumps over the lazy dog 0123456789</p>
+        </div>
+        <div>
+          <div class="ink font-semibold text-2xl">Inter Semibold 600</div>
+          <p class="mt-1">The quick brown fox jumps over the lazy dog 0123456789</p>
+        </div>
+        <div>
+          <div class="ink font-medium text-2xl">Inter Medium 500</div>
+          <p class="mt-1">The quick brown fox jumps over the lazy dog 0123456789</p>
+        </div>
+        <div>
+          <div class="ink text-2xl">Inter Regular 400</div>
+          <p class="mt-1">The quick brown fox jumps over the lazy dog 0123456789</p>
+        </div>
+        <div>
+          <div class="ink italic text-2xl">Inter Italic 400</div>
+          <p class="mt-1 italic">The quick brown fox jumps over the lazy dog 0123456789</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components -->
+  <section id="components" class="mx-auto max-w-[1200px] px-6 py-10">
+    <h2 class="ink text-3xl font-extrabold">UI Components</h2>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-14">
+      <!-- Buttons -->
+      <div class="token p-5">
+        <h3 class="ink font-semibold text-xl">Buttons</h3>
+        <div class="mt-4 flex flex-wrap gap-3 items-center">
+          <button class="btn btn-primary">Primary</button>
+          <button class="btn btn-primary" disabled style="opacity:.6">Primary (disabled)</button>
+          <button class="btn btn-secondary">Secondary</button>
+          <button class="btn btn-register">Register</button>
+        </div>
+      </div>
+
+      <!-- Chips -->
+      <div class="token p-5">
+        <h3 class="ink font-semibold text-xl">Role Chips</h3>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <div class="chip"><div class="w-5 h-5 rounded-full bg-[var(--primary)] opacity-90"></div><span>Product Management</span></div>
+          <div class="chip"><div class="w-5 h-5 rounded-full bg-[var(--primary)] opacity-90"></div><span>Data Science</span></div>
+          <div class="chip"><div class="w-5 h-5 rounded-full bg-[var(--primary)] opacity-90"></div><span>Machine Learning</span></div>
+          <div class="chip" style="border-color:var(--primary);color:var(--primary)"><span>View all roles →</span></div>
+        </div>
+      </div>
+
+      <!-- Promo Strip -->
+      <div class="token p-0 overflow-hidden">
+        <div class="px-5 py-6" style="background:var(--strip-bg)">
+          <p class="text-[var(--strip-text)] font-semibold">Level up your interviewing with our AI mock interviewer and get feedback instantly. <a href="#" class="underline">Try for free →</a></p>
+        </div>
+      </div>
+
+      <!-- Cards / Elevation -->
+      <div class="token p-5">
+        <h3 class="ink font-semibold text-xl">Elevation & Radius</h3>
+        <div class="mt-4 grid sm:grid-cols-3 gap-4">
+          <div class="p-4 bg-white rounded-[16px] shadow-[var(--shadow)]">
+            <div class="label">Card • radius 16 • soft shadow</div>
+          </div>
+          <div class="p-4 bg-white rounded-[12px] border border-[var(--hairline)]">
+            <div class="label">Panel • radius 12 • hairline</div>
+          </div>
+          <div class="p-4 bg-white rounded-full border border-[var(--hairline)]">
+            <div class="label">Pill • full radius</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accessibility -->
+      <div class="token p-5">
+        <h3 class="ink font-semibold text-xl">Accessibility Checks</h3>
+        <div class="mt-4 grid sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-[12px] bg-[var(--primary)] text-white">
+            <div class="text-sm">Purple on white button text ≥ AA ✔︎</div>
+          </div>
+          <div class="p-4 rounded-[12px] bg-[var(--chartreuse)] text-[var(--ink)]">
+            <div class="text-sm">Chartreuse slab w/ dark text ≥ AA ✔︎</div>
+          </div>
+          <div class="p-4 rounded-[12px] bg-white text-[var(--body)] border border-[var(--hairline)]">
+            <div class="text-sm">Body text on white ≥ AA ✔︎</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mt-10 py-10 border-t border-[var(--hairline)]">
+    <div class="mx-auto max-w-[1200px] px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-5 h-5 rotate-12" style="background:var(--chartreuse); clip-path:polygon(15% 65%,60% 30%,90% 0,90% 98%,60% 82%);"></div>
+        <span class="font-semibold ink">Outpacers Brand Kit</span>
+      </div>
+      <div class="text-sm text-[var(--muted)]">© 2025 Outpacers. Built with Tailwind on live tokens.</div>
+    </div>
+  </footer>
+
+<script>
+  // === Helpers ===
+  function getCssVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function rgbToHex(rgb){
+    const m = rgb && rgb.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+    if(!m) return rgb || '';
+    const toHex = n => ('0'+parseInt(n,10).toString(16)).slice(-2);
+    return '#' + toHex(m[1]) + toHex(m[2]) + toHex(m[3]);
+  }
+
+  // === Copy-to-clipboard + tooltips on all hex badges ===
+  document.querySelectorAll('.copy').forEach(el=>{
+    el.classList.add('has-tt');
+    const resolve = ()=>{
+      const varName = el.dataset.hex; 
+      const raw = el.dataset.raw;
+      return (raw || getCssVar(varName)).trim();
+    };
+    el.addEventListener('mouseenter',()=>{ el.dataset.tooltip = resolve(); });
+    el.addEventListener('click',()=>{
+      const val = resolve();
+      navigator.clipboard.writeText(val);
+      const prev = el.textContent; el.textContent = 'copied!';
+      setTimeout(()=>{ el.textContent = prev; }, 900);
+    });
+  });
+
+  // === Tooltips for buttons (shows actual bg/brand color) ===
+  function setBtnTooltip(selector, label){
+    document.querySelectorAll(selector).forEach(btn=>{
+      btn.classList.add('has-tt');
+      const cs = getComputedStyle(btn);
+      let bg = cs.backgroundColor && cs.backgroundColor !== 'rgba(0, 0, 0, 0)'
+        ? rgbToHex(cs.backgroundColor)
+        : getCssVar('--primary');
+      // Outline button shows white bg, so show brand token name instead:
+      if (btn.classList.contains('btn-secondary')) bg = getCssVar('--primary') || '#6F3FF5';
+      btn.dataset.tooltip = (label ? label + ' ' : '') + (bg || '');
+    });
+  }
+  setBtnTooltip('.btn-primary','Primary');
+  setBtnTooltip('.btn-register','Chartreuse');
+  setBtnTooltip('.btn-secondary','Secondary outline');
+
+  // === Inline Contrast Checker ===
+  const fgInput=document.getElementById('fgColor');
+  const bgInput=document.getElementById('bgColor');
+  const fgPick=document.getElementById('fgPicker');
+  const bgPick=document.getElementById('bgPicker');
+  const sample=document.getElementById('sample');
+  const ratioEl=document.getElementById('ratio');
+  const aa=document.getElementById('aa'), aaa=document.getElementById('aaa'),
+        aaL=document.getElementById('aaLarge'), aaaL=document.getElementById('aaaLarge');
+
+  function hexToRgbArr(hex){
+    if(!hex) return [0,0,0];
+    hex = hex.replace('#','');
+    if(hex.length===3) hex = hex.split('').map(c=>c+c).join('');
+    const n = parseInt(hex,16);
+    return [(n>>16)&255,(n>>8)&255,n&255];
+  }
+  function luminance([r,g,b]){
+    const a=[r,g,b].map(v=>{v/=255; return v<=0.03928? v/12.92 : Math.pow((v+0.055)/1.055,2.4);});
+    return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2];
+  }
+  function contrast(hex1,hex2){
+    const L1=luminance(hexToRgbArr(hex1)), L2=luminance(hexToRgbArr(hex2));
+    const [bright,dark] = L1>L2 ? [L1,L2] : [L2,L1];
+    return (bright+0.05)/(dark+0.05);
+  }
+  function updateContrast(){
+      const elsExist = fgInput && bgInput && sample && ratioEl && aa && aaa && aaL && aaaL;
+      if(!elsExist) return; // exit silently if checker isn't on this page
+      let fg=fgInput.value.trim(); let bg=bgInput.value.trim();
+      if(!fg.startsWith('#')) fg = rgbToHex(fg);
+      if(!bg.startsWith('#')) bg = rgbToHex(bg);
+      if(!fg || !bg) return;
+      sample.style.color = fg; sample.style.background = bg;
+      const r = contrast(fg,bg);
+      ratioEl.textContent = r.toFixed(2);
+      const passAA = r>=4.5, passAAA=r>=7, passAAL=r>=3, passAAAL=r>=4.5;
+      aa.textContent = passAA?'Pass':'Fail'; aa.style.color = passAA?'green':'#b91c1c';
+      aaa.textContent = passAAA?'Pass':'Fail'; aaa.style.color = passAAA?'green':'#b91c1c';
+      aaL.textContent = passAAL?'Pass':'Fail'; aaL.style.color = passAAL?'green':'#b91c1c';
+      aaaL.textContent = passAAAL?'Pass':'Fail'; aaaL.style.color = passAAAL?'green':'#b91c1c';
+    }
+  [fgInput,bgInput,fgPick,bgPick].forEach(el=> el && el.addEventListener('input', e=>{
+    if(e.target===fgPick) fgInput.value = fgPick.value;
+    if(e.target===bgPick) bgInput.value = bgPick.value;
+    updateContrast();
+  }));
+  updateContrast();
+</script>
+
+</body>
+</html>
