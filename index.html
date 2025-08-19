@@ -104,6 +104,40 @@
       line-height: 1.24;
       text-wrap: balance;
     }
+
+    /* Italic emphasis styles */
+    .italic-emphasis{
+      font-family: 'Libre Baskerville', 'Baskerville', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #5524E0;
+    }
+
+    .mixed-headline .main-text{
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .mixed-headline .italic-text{
+      font-family: 'Libre Baskerville', 'Baskerville', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .mixed-headline .accent-text{
+      font-weight: 600;
+      color: #5524E0;
+    }
+
+    .mixed-headline .gradient-text{
+      background: linear-gradient(135deg, var(--grad-blue) 0%, var(--grad-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      font-weight: 600;
+    }
     
     /* AI-themed end styles with different icons */
     .slab-brain{
@@ -406,6 +440,92 @@
       margin: 0;
     }
     
+    /* Section labels with copy icons */
+    .section-label{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #F4F6FA;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+    .section-label:hover{
+      background: #E5E7EF;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .section-label svg{
+      width: 14px;
+      height: 14px;
+      opacity: 0.7;
+    }
+    .section-label:hover svg{
+      opacity: 1;
+    }
+    .section-tooltip{
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+      width: 250px;
+      height: 250px;
+      background: #0E1116;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+      z-index: 9999;
+    }
+    .section-label:hover .section-tooltip{
+      opacity: 1;
+      visibility: visible;
+    }
+    .section-tooltip-content{
+      height: 100%;
+      overflow-y: auto;
+      padding: 16px;
+      color: #fff;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+    .section-tooltip-content::-webkit-scrollbar{
+      width: 6px;
+    }
+    .section-tooltip-content::-webkit-scrollbar-track{
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+    }
+    .section-tooltip-content::-webkit-scrollbar-thumb{
+      background: rgba(255,255,255,0.3);
+      border-radius: 3px;
+    }
+    .section-tooltip-content::-webkit-scrollbar-thumb:hover{
+      background: rgba(255,255,255,0.5);
+    }
+    .section-code-label{
+      color: #60A5FA;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .section-code-content{
+      color: #d1d5db;
+      padding-left: 0;
+      margin: 0;
+      margin-bottom: 16px;
+    }
+    
 
     
     .btn{border-radius:9999px;padding:12px 18px;font-weight:700}
@@ -488,33 +608,138 @@
         <span class="label">Linked PNG assets for pixel-perfect rendering. Monochrome generated via CSS filter.</span>
       </div>
       <div class="mt-6 grid-auto">
-        <div class="token p-4">
+        <div class="token p-4" style="position: relative;">
+          <div class="section-label">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+            </svg>
+            <div class="section-tooltip">
+              <div class="section-tooltip-content">
+                <span class="section-code-label">HTML:</span>
+                <div class="section-code-content">&lt;img src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-B-transparent.png" alt="Outpacers dark wordmark with green arrow" /&gt;</div>
+              </div>
+            </div>
+          </div>
           <h3 class="font-semibold ink">Lockup (Dark on Light)</h3>
           <div class="logo-slot mt-3 bg-white">
             <img class="logo-img" loading="lazy" alt="Outpacers dark wordmark with green arrow" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-B-transparent.png"/>
           </div>
         </div>
-        <div class="token p-4">
+        <div class="token p-4" style="position: relative;">
+          <div class="section-label">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+            </svg>
+            <div class="section-tooltip">
+              <div class="section-tooltip-content">
+                <span class="section-code-label">HTML:</span>
+                <div class="section-code-content">&lt;img src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-W-transparent.png" alt="Outpacers white wordmark with green arrow on black" /&gt;</div>
+              </div>
+            </div>
+          </div>
           <h3 class="font-semibold ink">White on Black</h3>
           <div class="logo-slot mt-3 bg-black">
             <img class="logo-img" loading="lazy" alt="Outpacers white wordmark with green arrow on black" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-W-transparent.png"/>
           </div>
         </div>
-        <div class="token p-4">
-          <h3 class="font-semibold ink">Monochrome (Dark) — CSS</h3>
+        <div class="token p-4" style="position: relative;">
+          <div class="section-label">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+            </svg>
+            <div class="section-tooltip">
+              <div class="section-tooltip-content">
+                <span class="section-code-label">CSS:</span>
+                <div class="section-code-content">.mono-dark {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}</div>
+                <span class="section-code-label">HTML:</span>
+                <div class="section-code-content">&lt;div class="logo-slot bg-[var(--soft-bg)]"&gt;
+  &lt;img class="logo-img mono-dark" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-B-transparent.png" alt="Outpacers monochrome dark lockup" /&gt;
+&lt;/div&gt;</div>
+              </div>
+            </div>
+          </div>
+          <h3 class="font-semibold ink">Monochrome (CSS)</h3>
           <div class="logo-slot mt-3 bg-[var(--soft-bg)]">
             <img class="logo-img mono-dark" loading="lazy" alt="Outpacers monochrome dark lockup generated via CSS filter" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-B-transparent.png"/>
           </div>
         </div>
-        <div class="token p-4">
-          <h3 class="font-semibold ink">App/Favicon</h3>
+        <div class="token p-4" style="position: relative;">
+          <div class="section-label">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+            </svg>
+            <div class="section-tooltip">
+              <div class="section-tooltip-content">
+                <span class="section-code-label">HTML:</span>
+                <div class="section-code-content">&lt;img src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-W-transparent.png" alt="Outpacers white wordmark on black background" /&gt;</div>
+              </div>
+            </div>
+          </div>
+          <h3 class="font-semibold ink">Inverted Monochrome</h3>
+          <div class="logo-slot mt-3 bg-black">
+            <img class="logo-img" loading="lazy" alt="Outpacers white wordmark on black background" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-W-transparent.png"/>
+          </div>
+        </div>
+        <div class="token p-4" style="position: relative;">
+          <div class="section-label">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+            </svg>
+            <div class="section-tooltip">
+              <div class="section-tooltip-content">
+                <span class="section-code-label">CSS:</span>
+                <div class="section-code-content">.logo-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: black;
+}
+
+.logo-svg {
+  max-width: 55px;
+  height: auto;
+}</div>
+                <span class="section-code-label">HTML:</span>
+                <div class="section-code-content">&lt;div class="logo-slot bg-black"&gt;
+  &lt;svg width="55" height="55" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" version="1.1" style="max-width: 55px;"&gt;
+    &lt;path d="M 437.634 0.000 L 430.873 0.000 L 428.620 3.606 L 425.465 3.606 L 423.211 7.211 L 420.056 7.211 L 417.803 10.817 L 414.648 10.817 L 410.592 16.225 L 407.437 16.225 L 405.183 19.831 L 402.028 19.831 L 399.775 23.437 L 396.620 23.437 L 394.366 27.042 L 391.211 27.042 L 387.155 32.451 L 384.000 32.451 L 381.746 36.056 L 378.592 36.056 L 376.338 39.662 L 373.183 39.662 L 370.930 43.268 L 367.775 43.268 L 363.718 48.676 L 356.958 50.479 L 352.901 55.887 L 349.746 55.887 L 347.493 59.493 L 344.338 59.493 L 340.282 64.901 L 337.127 64.901 L 334.873 68.507 L 331.718 68.507 L 329.465 72.113 L 326.310 72.113 L 324.056 75.718 L 320.901 75.718 L 318.648 79.324 L 315.493 79.324 L 313.239 82.930 L 310.085 82.930 L 306.028 88.338 L 302.873 88.338 L 300.620 91.944 L 297.465 91.944 L 295.211 95.549 L 292.056 95.549 L 288.000 100.958 L 284.845 100.958 L 282.592 104.563 L 279.437 104.563 L 277.183 108.169 L 274.028 108.169 L 271.775 111.775 L 268.620 111.775 L 264.563 117.183 L 261.408 117.183 L 259.155 120.789 L 256.000 120.789 L 253.746 124.394 L 250.592 124.394 L 248.338 128.000 L 245.183 128.000 L 241.127 133.408 L 237.972 133.408 L 235.718 137.014 L 232.563 137.014 L 230.310 140.620 L 227.155 140.620 L 224.901 144.225 L 221.746 144.225 L 217.690 149.634 L 214.535 149.634 L 212.282 153.239 L 209.127 153.239 L 206.873 156.845 L 203.718 156.845 L 201.465 160.451 L 198.310 160.451 L 194.254 165.859 L 191.099 165.859 L 187.042 171.268 L 180.282 173.070 L 176.225 178.479 L 173.070 178.479 L 170.817 182.085 L 167.662 182.085 L 165.408 185.690 L 162.254 185.690 L 160.000 189.296 L 156.845 189.296 L 152.789 194.704 L 149.634 194.704 L 147.380 198.310 L 144.225 198.310 L 140.169 203.718 L 137.014 203.718 L 134.761 207.324 L 131.606 207.324 L 129.352 210.930 L 126.197 210.930 L 123.944 214.535 L 120.789 214.535 L 118.535 218.141 L 115.380 218.141 L 113.127 221.746 L 109.972 221.746 L 105.915 227.155 L 102.761 227.155 L 100.507 230.761 L 97.352 230.761 L 97.352 232.113 L 93.746 234.366 L 93.746 237.521 L 100.958 243.380 L 100.958 246.535 L 122.592 266.817 L 122.592 269.972 L 133.408 279.437 L 133.408 282.592 L 137.014 284.845 L 137.014 288.000 L 135.211 288.451 L 135.211 291.606 L 133.408 292.056 L 122.141 304.676 L 118.986 304.676 L 107.718 317.296 L 104.563 317.296 L 91.493 331.718 L 88.338 331.718 L 78.873 342.535 L 75.718 342.535 L 75.718 343.887 L 70.310 347.944 L 70.310 352.901 L 71.662 352.901 L 72.113 354.704 L 78.873 354.704 L 79.324 356.507 L 87.887 356.507 L 88.338 358.310 L 98.704 358.310 L 99.155 360.113 L 105.915 360.113 L 106.366 361.915 L 114.930 361.915 L 115.380 363.718 L 127.549 363.718 L 128.000 365.521 L 136.563 365.521 L 137.014 367.324 L 143.775 367.324 L 144.225 369.127 L 154.592 369.127 L 155.042 370.930 L 161.803 370.930 L 162.254 372.732 L 183.437 374.535 L 183.887 376.338 L 192.451 376.338 L 192.901 378.141 L 201.465 378.141 L 201.915 379.944 L 208.676 379.944 L 209.127 381.746 L 215.887 381.746 L 216.338 383.549 L 226.704 383.549 L 227.155 385.352 L 230.310 385.352 L 232.563 388.958 L 235.718 388.958 L 236.169 390.761 L 241.577 394.817 L 241.577 397.972 L 272.225 427.268 L 272.225 430.423 L 306.479 463.324 L 306.479 466.479 L 340.732 499.380 L 340.732 502.535 L 342.085 502.535 L 349.746 511.549 L 354.704 511.549 L 354.704 510.197 L 356.507 509.746 L 356.507 499.380 L 358.310 498.930 L 358.310 490.366 L 360.113 489.915 L 360.113 479.549 L 361.915 479.099 L 361.915 463.324 L 363.718 462.873 L 363.718 454.310 L 365.521 453.859 L 365.521 443.493 L 367.324 443.042 L 369.127 421.859 L 370.930 421.408 L 370.930 418.254 L 372.732 417.803 L 373.183 416.000 L 387.155 416.000 L 387.606 417.803 L 396.169 417.803 L 396.620 419.606 L 406.986 419.606 L 407.437 421.408 L 417.803 421.408 L 418.254 423.211 L 426.817 423.211 L 427.268 425.014 L 439.437 425.014 L 439.437 423.662 L 441.239 423.211 L 441.239 322.704 L 439.437 322.254 L 439.437 171.268 L 437.634 170.817 Z" fill="#FFFFFF"/&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</div>
+              </div>
+            </div>
+          </div>
+          <h3 class="font-semibold ink">App/Favicon *</h3>
           <div class="logo-slot mt-3 bg-white">
             <img class="logo-img" loading="lazy" alt="Outpacers green arrow mark" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Arrow-Green-BGTransparent-L.png"/>
           </div>
-          <p class="mt-3 text-sm text-[var(--muted)]">Use for app icons, favicons, avatars. Recommended 180×180 for Apple Touch; 32×32/16×16 for favicons.</p>
+        </div>
+        <div class="token p-4" style="position: relative;">
+          <div class="section-label">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+            </svg>
+            <div class="section-tooltip">
+              <div class="section-tooltip-content">
+                <span class="section-code-label">SVG Code:</span>
+                <div class="section-code-content">&lt;svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" version="1.1"&gt;
+  &lt;path d="M 437.634 0.000 L 430.873 0.000 L 428.620 3.606 L 425.465 3.606 L 423.211 7.211 L 420.056 7.211 L 417.803 10.817 L 414.648 10.817 L 410.592 16.225 L 407.437 16.225 L 405.183 19.831 L 402.028 19.831 L 399.775 23.437 L 396.620 23.437 L 394.366 27.042 L 391.211 27.042 L 387.155 32.451 L 384.000 32.451 L 381.746 36.056 L 378.592 36.056 L 376.338 39.662 L 373.183 39.662 L 370.930 43.268 L 367.775 43.268 L 363.718 48.676 L 356.958 50.479 L 352.901 55.887 L 349.746 55.887 L 347.493 59.493 L 344.338 59.493 L 340.282 64.901 L 337.127 64.901 L 334.873 68.507 L 331.718 68.507 L 329.465 72.113 L 326.310 72.113 L 324.056 75.718 L 320.901 75.718 L 318.648 79.324 L 315.493 79.324 L 313.239 82.930 L 310.085 82.930 L 306.028 88.338 L 302.873 88.338 L 300.620 91.944 L 297.465 91.944 L 295.211 95.549 L 292.056 95.549 L 288.000 100.958 L 284.845 100.958 L 282.592 104.563 L 279.437 104.563 L 277.183 108.169 L 274.028 108.169 L 271.775 111.775 L 268.620 111.775 L 264.563 117.183 L 261.408 117.183 L 259.155 120.789 L 256.000 120.789 L 253.746 124.394 L 250.592 124.394 L 248.338 128.000 L 245.183 128.000 L 241.127 133.408 L 237.972 133.408 L 235.718 137.014 L 232.563 137.014 L 230.310 140.620 L 227.155 140.620 L 224.901 144.225 L 221.746 144.225 L 217.690 149.634 L 214.535 149.634 L 212.282 153.239 L 209.127 153.239 L 206.873 156.845 L 203.718 156.845 L 201.465 160.451 L 198.310 160.451 L 194.254 165.859 L 191.099 165.859 L 187.042 171.268 L 180.282 173.070 L 176.225 178.479 L 173.070 178.479 L 170.817 182.085 L 167.662 182.085 L 165.408 185.690 L 162.254 185.690 L 160.000 189.296 L 156.845 189.296 L 152.789 194.704 L 149.634 194.704 L 147.380 198.310 L 144.225 198.310 L 140.169 203.718 L 137.014 203.718 L 134.761 207.324 L 131.606 207.324 L 129.352 210.930 L 126.197 210.930 L 123.944 214.535 L 120.789 214.535 L 118.535 218.141 L 115.380 218.141 L 113.127 221.746 L 109.972 221.746 L 105.915 227.155 L 102.761 227.155 L 100.507 230.761 L 97.352 230.761 L 97.352 232.113 L 93.746 234.366 L 93.746 237.521 L 100.958 243.380 L 100.958 246.535 L 122.592 266.817 L 122.592 269.972 L 133.408 279.437 L 133.408 282.592 L 137.014 284.845 L 137.014 288.000 L 135.211 288.451 L 135.211 291.606 L 133.408 292.056 L 122.141 304.676 L 118.986 304.676 L 107.718 317.296 L 104.563 317.296 L 91.493 331.718 L 88.338 331.718 L 78.873 342.535 L 75.718 342.535 L 75.718 343.887 L 70.310 347.944 L 70.310 352.901 L 71.662 352.901 L 72.113 354.704 L 78.873 354.704 L 79.324 356.507 L 87.887 356.507 L 88.338 358.310 L 98.704 358.310 L 99.155 360.113 L 105.915 360.113 L 106.366 361.915 L 114.930 361.915 L 115.380 363.718 L 127.549 363.718 L 128.000 365.521 L 136.563 365.521 L 137.014 367.324 L 143.775 367.324 L 144.225 369.127 L 154.592 369.127 L 155.042 370.930 L 161.803 370.930 L 162.254 372.732 L 183.437 374.535 L 183.887 376.338 L 192.451 376.338 L 192.901 378.141 L 201.465 378.141 L 201.915 379.944 L 208.676 379.944 L 209.127 381.746 L 215.887 381.746 L 216.338 383.549 L 226.704 383.549 L 227.155 385.352 L 230.310 385.352 L 232.563 388.958 L 235.718 388.958 L 236.169 390.761 L 241.577 394.817 L 241.577 397.972 L 272.225 427.268 L 272.225 430.423 L 306.479 463.324 L 306.479 466.479 L 340.732 499.380 L 340.732 502.535 L 342.085 502.535 L 349.746 511.549 L 354.704 511.549 L 354.704 510.197 L 356.507 509.746 L 356.507 499.380 L 358.310 498.930 L 358.310 490.366 L 360.113 489.915 L 360.113 479.549 L 361.915 479.099 L 361.915 463.324 L 363.718 462.873 L 363.718 454.310 L 365.521 453.859 L 365.521 443.493 L 367.324 443.042 L 369.127 421.859 L 370.930 421.408 L 370.930 418.254 L 372.732 417.803 L 373.183 416.000 L 387.155 416.000 L 387.606 417.803 L 396.169 417.803 L 396.620 419.606 L 406.986 419.606 L 407.437 421.408 L 417.803 421.408 L 418.254 423.211 L 426.817 423.211 L 427.268 425.014 L 439.437 425.014 L 439.437 423.662 L 441.239 423.211 L 441.239 322.704 L 439.437 322.254 L 439.437 171.268 L 437.634 170.817 Z" fill="#FFFFFF"/&gt;
+&lt;/svg&gt;</div>
+              </div>
+            </div>
+          </div>
+          <h3 class="font-semibold ink">SVG Icon</h3>
+          <div class="logo-slot mt-3 bg-black">
+            <svg width="55" height="55" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" version="1.1" style="max-width: 55px;">
+              <path d="M 437.634 0.000 L 430.873 0.000 L 428.620 3.606 L 425.465 3.606 L 423.211 7.211 L 420.056 7.211 L 417.803 10.817 L 414.648 10.817 L 410.592 16.225 L 407.437 16.225 L 405.183 19.831 L 402.028 19.831 L 399.775 23.437 L 396.620 23.437 L 394.366 27.042 L 391.211 27.042 L 387.155 32.451 L 384.000 32.451 L 381.746 36.056 L 378.592 36.056 L 376.338 39.662 L 373.183 39.662 L 370.930 43.268 L 367.775 43.268 L 363.718 48.676 L 356.958 50.479 L 352.901 55.887 L 349.746 55.887 L 347.493 59.493 L 344.338 59.493 L 340.282 64.901 L 337.127 64.901 L 334.873 68.507 L 331.718 68.507 L 329.465 72.113 L 326.310 72.113 L 324.056 75.718 L 320.901 75.718 L 318.648 79.324 L 315.493 79.324 L 313.239 82.930 L 310.085 82.930 L 306.028 88.338 L 302.873 88.338 L 300.620 91.944 L 297.465 91.944 L 295.211 95.549 L 292.056 95.549 L 288.000 100.958 L 284.845 100.958 L 282.592 104.563 L 279.437 104.563 L 277.183 108.169 L 274.028 108.169 L 271.775 111.775 L 268.620 111.775 L 264.563 117.183 L 261.408 117.183 L 259.155 120.789 L 256.000 120.789 L 253.746 124.394 L 250.592 124.394 L 248.338 128.000 L 245.183 128.000 L 241.127 133.408 L 237.972 133.408 L 235.718 137.014 L 232.563 137.014 L 230.310 140.620 L 227.155 140.620 L 224.901 144.225 L 221.746 144.225 L 217.690 149.634 L 214.535 149.634 L 212.282 153.239 L 209.127 153.239 L 206.873 156.845 L 203.718 156.845 L 201.465 160.451 L 198.310 160.451 L 194.254 165.859 L 191.099 165.859 L 187.042 171.268 L 180.282 173.070 L 176.225 178.479 L 173.070 178.479 L 170.817 182.085 L 167.662 182.085 L 165.408 185.690 L 162.254 185.690 L 160.000 189.296 L 156.845 189.296 L 152.789 194.704 L 149.634 194.704 L 147.380 198.310 L 144.225 198.310 L 140.169 203.718 L 137.014 203.718 L 134.761 207.324 L 131.606 207.324 L 129.352 210.930 L 126.197 210.930 L 123.944 214.535 L 120.789 214.535 L 118.535 218.141 L 115.380 218.141 L 113.127 221.746 L 109.972 221.746 L 105.915 227.155 L 102.761 227.155 L 100.507 230.761 L 97.352 230.761 L 97.352 232.113 L 93.746 234.366 L 93.746 237.521 L 100.958 243.380 L 100.958 246.535 L 122.592 266.817 L 122.592 269.972 L 133.408 279.437 L 133.408 282.592 L 137.014 284.845 L 137.014 288.000 L 135.211 288.451 L 135.211 291.606 L 133.408 292.056 L 122.141 304.676 L 118.986 304.676 L 107.718 317.296 L 104.563 317.296 L 91.493 331.718 L 88.338 331.718 L 78.873 342.535 L 75.718 342.535 L 75.718 343.887 L 70.310 347.944 L 70.310 352.901 L 71.662 352.901 L 72.113 354.704 L 78.873 354.704 L 79.324 356.507 L 87.887 356.507 L 88.338 358.310 L 98.704 358.310 L 99.155 360.113 L 105.915 360.113 L 106.366 361.915 L 114.930 361.915 L 115.380 363.718 L 127.549 363.718 L 128.000 365.521 L 136.563 365.521 L 137.014 367.324 L 143.775 367.324 L 144.225 369.127 L 154.592 369.127 L 155.042 370.930 L 161.803 370.930 L 162.254 372.732 L 183.437 374.535 L 183.887 376.338 L 192.451 376.338 L 192.901 378.141 L 201.465 378.141 L 201.915 379.944 L 208.676 379.944 L 209.127 381.746 L 215.887 381.746 L 216.338 383.549 L 226.704 383.549 L 227.155 385.352 L 230.310 385.352 L 232.563 388.958 L 235.718 388.958 L 236.169 390.761 L 241.577 394.817 L 241.577 397.972 L 272.225 427.268 L 272.225 430.423 L 306.479 463.324 L 306.479 466.479 L 340.732 499.380 L 340.732 502.535 L 342.085 502.535 L 349.746 511.549 L 354.704 511.549 L 354.704 510.197 L 356.507 509.746 L 356.507 499.380 L 358.310 498.930 L 358.310 490.366 L 360.113 489.915 L 360.113 479.549 L 361.915 479.099 L 361.915 463.324 L 363.718 462.873 L 363.718 454.310 L 365.521 453.859 L 365.521 443.493 L 367.324 443.042 L 369.127 421.859 L 370.930 421.408 L 370.930 418.254 L 372.732 417.803 L 373.183 416.000 L 387.155 416.000 L 387.606 417.803 L 396.169 417.803 L 396.620 419.606 L 406.986 419.606 L 407.437 421.408 L 417.803 421.408 L 418.254 423.211 L 426.817 423.211 L 427.268 425.014 L 439.437 425.014 L 439.437 423.662 L 441.239 423.211 L 441.239 322.704 L 439.437 322.254 L 439.437 171.268 L 437.634 170.817 Z" fill="#FFFFFF"/>
+            </svg>
+          </div>
         </div>
       </div>
-      <p class="mt-4 text-sm text-[var(--muted)]">Clear-space: 1× the height of the mark on all sides. Minimum digital size: 24px height.</p>
+      <p class="mt-4 text-sm text-[var(--muted)]">Clear-space: 1× the height of the mark on all sides. Minimum digital size: 24px height.<br/>* <em>Use for app icons, favicons, avatars. Recommended 180×180 for Apple Touch; 32×32/16×16 for favicons.</em></p>
     </div>
   </section>
 
@@ -611,7 +836,41 @@
     <h2 class="ink text-3xl font-extrabold">Typography</h2>
     <p class="mt-2 label">Family: Inter (Regular, Medium, Semibold, Bold, ExtraBold) + Italics.</p>
 
-    <div class="token p-6 mt-6">
+    <div class="token p-6 mt-6" style="position: relative;">
+      <div class="section-label">
+        Gradient Emphasis
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+        </svg>
+        <div class="section-tooltip">
+          <div class="section-tooltip-content">
+            <span class="section-code-label">CSS:</span>
+            <div class="section-code-content">:root{
+  --grad-blue:#3B82F6;
+  --grad-purple:#8B5CF6;
+  --ink:#0E1116;
+}
+.brand-gradient{
+  background: linear-gradient(135deg, var(--grad-blue) 0%, var(--grad-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+h1{
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.24;
+  font-size: clamp(42px, 7vw, 92px);
+  text-wrap: balance;
+}</div>
+            <span class="section-code-label">HTML:</span>
+            <div class="section-code-content">&lt;h1 class="text-5xl md:text-6xl font-extrabold leading-tight"&gt;
+  Everything you need to nail &lt;br/&gt;your &lt;span class="brand-gradient"&gt;Next Interview&lt;/span&gt;
+&lt;/h1&gt;</div>
+          </div>
+        </div>
+      </div>
       <div class="ink text-5xl md:text-6xl font-extrabold leading-tight">Everything you need to nail <br/>your <span class="brand-gradient">Next Interview</span></div>
       <p class="mt-3 text-lg">Lead (18/1.6): Clear, encouraging, high-trust. Keep line length ~68ch for readability.</p>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
@@ -642,8 +901,87 @@
       </div>
     </div>
 
-    <div class="token p-6 mt-6">
-      <div class="ink text-5xl md:text-6xl font-extrabold leading-tight"><span class="brand-gradient">Outthink</span> the competition<br/> through <span class="slab-square">Outskilling
+    <div class="token p-6 mt-6" style="position: relative;">
+      <div class="section-label">
+        Gradient + Highlight
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+        </svg>
+        <div class="section-tooltip">
+          <div class="section-tooltip-content">
+            <span class="section-code-label">CSS:</span>
+            <div class="section-code-content">:root{
+  --grad-blue:#3B82F6;
+  --grad-purple:#8B5CF6;
+  --chartreuse:#CCFF04;
+  --ink:#0E1116;
+}
+.brand-gradient{
+  background: linear-gradient(135deg, var(--grad-blue) 0%, var(--grad-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.slab-square{
+  background: var(--chartreuse);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 3px 1.4em 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  white-space: nowrap;
+  position: relative;
+  line-height: 1.24;
+  text-wrap: balance;
+}
+.slab-square .bolt{
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1em;
+  width: auto;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L3 14h7l-1 8 10-12h-7l1-8z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: #FFFFFF;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L3 14h7l-1 8 10-12h-7l1-8z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+.slab-square .bolt-fallback{
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1em;
+  width: auto;
+  color: #FFFFFF;
+}
+h1{
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.24;
+  font-size: clamp(42px, 7vw, 92px);
+  text-wrap: balance;
+}</div>
+            <span class="section-code-label">HTML:</span>
+            <div class="section-code-content">&lt;h1 class="text-5xl md:text-6xl font-extrabold leading-tight"&gt;
+  &lt;span class="brand-gradient"&gt;Outsmart&lt;/span&gt; them&lt;br/&gt; through &lt;span class="slab-square"&gt;Outskilling
+    &lt;div class="bolt"&gt;&lt;/div&gt;
+    &lt;svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"&gt;
+      &lt;path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/h1&gt;</div>
+          </div>
+        </div>
+      </div>
+      <div class="ink text-5xl md:text-6xl font-extrabold leading-tight"><span class="brand-gradient">Outsmart</span> them<br/> through <span class="slab-square">Outskilling
         <div class="bolt"></div>
         <svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
@@ -678,7 +1016,7 @@
                   <div>
             <div class="ink font-semibold">Lightning Bolt (Default)</div>
             <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-wrapper">
-              <span class="slab-square">Outpacing
+              <span class="slab-square">Outskilling
                 <div class="bolt"></div>
                 <svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
@@ -753,7 +1091,7 @@
         <div>
           <div class="ink font-semibold">Brain Icon</div>
           <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-wrapper">
-            <span class="slab-brain">Intelligence
+            <span class="slab-brain">Outthinking
               <svg class="brain" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <defs>
                   <style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:1.91px;}</style>
@@ -846,7 +1184,7 @@
         </div>
         <div>
           <div class="ink font-semibold">Search/Magnifying Glass</div>
-          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-search">Discovery
+          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-search">Outpacing
             <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#FFFFFF"/>
             </svg>
@@ -905,7 +1243,46 @@
       </div>
     </div>
 
-    <div class="token p-6 mt-6">
+    <div class="token p-6 mt-6" style="position: relative;">
+      <div class="section-label">
+        Middle Highlight
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+        </svg>
+        <div class="section-tooltip">
+          <div class="section-tooltip-content">
+            <span class="section-code-label">CSS:</span>
+            <div class="section-code-content">:root{
+  --chartreuse:#CCFF04;
+  --ink:#0E1116;
+}
+.slab-highlight{
+  background: var(--chartreuse);
+  color: var(--ink);
+  border-radius: 12px;
+  margin-top: 12px;
+  padding: 3px 16px 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  white-space: nowrap;
+  line-height: 1.24;
+  text-wrap: balance;
+}
+h1{
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.24;
+  font-size: clamp(42px, 7vw, 92px);
+  text-wrap: balance;
+}</div>
+            <span class="section-code-label">HTML:</span>
+            <div class="section-code-content">&lt;h1 class="text-5xl md:text-6xl font-extrabold leading-tight"&gt;
+  Simply &lt;span class="slab-highlight"&gt;Outbuild&lt;/span&gt; them for &lt;br/&gt;your competitive advantage.
+&lt;/h1&gt;</div>
+          </div>
+        </div>
+      </div>
       <div class="ink text-5xl md:text-6xl font-extrabold leading-tight">Simply <span class="slab-highlight">Outbuild</span> them for <br/>your competitive advantage.</div>
       <p class="mt-3 text-lg">Mid-Sentence Highlight (48/60): Chartreuse slab applied to middle word for emphasis without icon.</p>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
@@ -924,6 +1301,137 @@
         <div>
           <div class="ink font-semibold">Line Height</div>
           <p class="mt-1">leading-tight for dramatic, impactful headlines</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="token p-6 mt-6" style="position: relative;">
+      <div class="section-label">
+        Italic Emphasis
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+        </svg>
+        <div class="section-tooltip">
+          <div class="section-tooltip-content">
+            <span class="section-code-label">CSS:</span>
+            <div class="section-code-content">:root{
+  --ink:#0E1116;
+  --grad-blue:#3B82F6;
+  --grad-purple:#8B5CF6;
+}
+.italic-emphasis{
+  font-family: 'Libre Baskerville', 'Baskerville', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #5524E0;
+}
+h1{
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.24;
+  font-size: clamp(36px, 6vw, 76px);
+  text-wrap: balance;
+}</div>
+            <span class="section-code-label">HTML:</span>
+            <div class="section-code-content">&lt;h1 class="text-4xl md:text-5xl font-semibold leading-tight"&gt;
+  Good, fast, cheap. &lt;span class="italic-emphasis"&gt;Pick two&lt;/span&gt;
+&lt;/h1&gt;</div>
+          </div>
+        </div>
+      </div>
+      <div class="ink text-4xl md:text-5xl font-semibold leading-tight">Good, fast, cheap. <span class="italic-emphasis">Pick two</span></div>
+      <p class="mt-3 text-lg">Italic Emphasis (36/48): Elegant serif italic for sophisticated contrast against semibold sans-serif.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="ink font-semibold">Serif Italic</div>
+          <p class="mt-1">Libre Baskerville italic for elegant emphasis: <span class="italic-emphasis">emphasis</span></p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Color Accent</div>
+          <p class="mt-1">Purple accent color (#5524E0) for visual hierarchy</p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Typography Scale</div>
+          <p class="mt-1">text-4xl md:text-5xl (36px/48px) with font-semibold (600)</p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Font Pairing</div>
+          <p class="mt-1">Bold sans-serif + elegant serif italic</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="token p-6 mt-6" style="position: relative;">
+      <div class="section-label">
+        Mixed Style Headline
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+        </svg>
+        <div class="section-tooltip">
+          <div class="section-tooltip-content">
+            <span class="section-code-label">CSS:</span>
+            <div class="section-code-content">:root{
+  --ink:#0E1116;
+  --grad-blue:#3B82F6;
+  --grad-purple:#8B5CF6;
+}
+.mixed-headline .main-text{
+  font-weight: 600;
+  color: var(--ink);
+}
+.mixed-headline .italic-text{
+  font-family: 'Libre Baskerville', 'Baskerville', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+}
+.mixed-headline .accent-text{
+  font-weight: 600;
+  color: #5524E0;
+}
+.mixed-headline .gradient-text{
+  background: linear-gradient(135deg, var(--grad-blue) 0%, var(--grad-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+h1{
+  margin: 0;
+  line-height: 1.24;
+  font-size: clamp(36px, 6vw, 76px);
+  text-wrap: balance;
+}</div>
+            <span class="section-code-label">HTML:</span>
+            <div class="section-code-content">&lt;h1 class="mixed-headline text-4xl md:text-5xl font-semibold leading-tight"&gt;
+  &lt;span class="main-text"&gt;Cutting edge &lt;/span&gt; &lt;span class="italic-text"&gt;skills&lt;/span&gt;&lt;span class="main-text"&gt; that&lt;/span&gt;&lt;br/&gt;
+  &lt;span class="main-text"&gt;&lt;u&gt;actually&lt;/u&gt; get you &lt;/span&gt;&lt;span class="gradient-text"&gt;&lt;em&gt;promoted&lt;/em&gt;&lt;/span&gt;
+&lt;/h1&gt;</div>
+          </div>
+        </div>
+      </div>
+              <div class="mixed-headline ink text-4xl md:text-5xl font-semibold leading-tight">
+        <span class="main-text">Cutting edge </span> <span class="italic-text">skills</span><span class="main-text"> that</span><br/>
+        <span class="main-text"><u>actually</u> get you </span><span class="gradient-text"><em>promoted</em></span>
+      </div>
+      <p class="mt-3 text-lg">Mixed Style (36/48): Complex typography combining semibold sans-serif, elegant serif italic, and accent colors.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="ink font-semibold">Style Mixing</div>
+          <p class="mt-1">Semibold + italic + gradient + underline + emphasis combinations</p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Visual Hierarchy</div>
+          <p class="mt-1">Multiple emphasis levels for complex messaging</p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Typography Scale</div>
+          <p class="mt-1">text-4xl md:text-5xl (36px/48px) with varied weights</p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Line Breaks</div>
+          <p class="mt-1">Strategic line breaks for dramatic impact</p>
         </div>
       </div>
     </div>
@@ -958,9 +1466,9 @@
       </div>
 
       <!-- Promo Strip -->
-      <div class="token p-0 overflow-hidden">
-        <div class="px-5 py-6" style="background:var(--strip-bg)">
-          <p class="text-[var(--strip-text)] font-semibold">Level up your interviewing with our AI mock interviewer and get feedback instantly. <a href="#" class="underline">Try for free →</a></p>
+      <div class="token p-0 overflow-hidden" style="background:#EEE7FF">
+        <div class="px-5 py-6">
+          <p class="text-[var(--ink)] font-semibold">AI doesn't just make you <em>smarter</em>—it helps you <span style="color:var(--primary)"><em>outthink</em></span> the competition. <a href="#" class="underline" style="color:var(--primary)">Join Outpacers today! →</a></p>
         </div>
       </div>
 
@@ -1079,6 +1587,29 @@
         setTimeout(() => {
           tooltip.textContent = originalText;
         }, 1000);
+      });
+    });
+  });
+
+  // === Section copy functionality ===
+  document.querySelectorAll('.section-label').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tooltip = btn.querySelector('.section-tooltip');
+      const text = tooltip.textContent;
+      
+      navigator.clipboard.writeText(text).then(() => {
+        // Silent copy - no visual feedback to prevent layout shifts
+      }).catch(() => {
+        // Fallback for older browsers - also silent
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
       });
     });
   });
