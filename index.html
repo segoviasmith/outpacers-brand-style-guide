@@ -22,14 +22,14 @@
       --white:#FFFFFF;
       --header:#0C0F14;
 
-      --primary:#6F3FF5;
-      --primary-hover:#7C55FF;
-      --primary-press:#4A2BD1;
+      --primary:#5524E0;
+      --primary-hover:#5233b7;
+      --primary-press:#5233b7;
 
       --grad-blue:#3A98FD;
       --grad-purple:#6F3FF5;
 
-      --chartreuse:#DDF700; /* choose and standardize */
+      --chartreuse:#CCFF04; /* Chartreuse */
 
       --chip-bg:#FFFFFF;
       --hairline:#E5E7EB;
@@ -47,10 +47,373 @@
     .ink{color:var(--ink)}
     .brand-gradient{background:linear-gradient(90deg,var(--grad-blue),var(--grad-purple));-webkit-background-clip:text;background-clip:text;color:transparent}
     .chartreuse-slab{background:var(--chartreuse);color:var(--ink);border-radius:10px;padding:2px 8px;display:inline-flex;align-items:center;gap:6px}
+    
+    /* Square slab with knockout bolt for end-of-sentence highlights */
+    .slab-square{
+      background: var(--chartreuse);
+      color: var(--ink);
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 1.4em 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      position: relative;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .slab-square .bolt{
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1em;
+      width: auto;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L3 14h7l-1 8 10-12h-7l1-8z'/%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: #FFFFFF;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L3 14h7l-1 8 10-12h-7l1-8z'/%3E%3C/svg%3E");
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+    }
+    .slab-square .bolt-fallback{
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1em;
+      width: auto;
+      color: #FFFFFF;
+    }
+    
+    /* Square slab without icon for mid-sentence highlights */
+    .slab-highlight{
+      background: var(--chartreuse);
+      color: var(--ink);
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 16px 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    
+    /* AI-themed end styles with different icons */
+    .slab-brain{
+      background: var(--chartreuse);
+      color: var(--ink);
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 1.4em 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      position: relative;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .slab-brain .brain{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.765em;
+      width: auto;
+    }
+    
+    .slab-rocket{
+      background: var(--chartreuse);
+      color: var(--ink);
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 1.4em 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      position: relative;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .slab-rocket .rocket{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.6885em;
+      width: auto;
+      mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 21 21' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.22131 12.4042C3.15911 11.767 1.99505 11.2795 0.75747 10.9701C0.00338 10.7816 -0.256736 9.8425 0.29289 9.2929L2.12132 7.46447C3.059 6.52678 4.33077 6 5.65686 6H8.12714L8.59713 5.35377C11.0434 1.99009 14.9515 0 19.1107 0H20C20.5523 0 21 0.44772 21 1V1.8893C21 6.04848 19.0099 9.9566 15.6462 12.4029L15.2107 12.7196L15.4209 13.5603C15.8468 15.2642 15.3476 17.0666 14.1057 18.3085L11.7071 20.7071C11.1575 21.2567 10.2184 20.9966 10.0299 20.2425C9.7205 19.0049 9.233 17.8409 8.59583 16.7787C6.88985 17.6201 5.12604 18.3454 3.31623 18.9487C2.53447 19.2093 1.79073 18.4655 2.05132 17.6838C2.65459 15.874 3.37995 14.1102 4.22131 12.4042zM7.41758 15.1283C6.9475 14.5698 6.43024 14.0525 5.87171 13.5824C5.43696 14.4825 5.03594 15.3991 4.66964 16.3304C5.60092 15.9641 6.51753 15.563 7.41758 15.1283z'/%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      background-color: #FFFFFF;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 21 21' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.22131 12.4042C3.15911 11.767 1.99505 11.2795 0.75747 10.9701C0.00338 10.7816 -0.256736 9.8425 0.29289 9.2929L2.12132 7.46447C3.059 6.52678 4.33077 6 5.65686 6H8.12714L8.59713 5.35377C11.0434 1.99009 14.9515 0 19.1107 0H20C20.5523 0 21 0.44772 21 1V1.8893C21 6.04848 19.0099 9.9566 15.6462 12.4029L15.2107 12.7196L15.4209 13.5603C15.8468 15.2642 15.3476 17.0666 14.1057 18.3085L11.7071 20.7071C11.1575 21.2567 10.2184 20.9966 10.0299 20.2425C9.7205 19.0049 9.233 17.8409 8.59583 16.7787C6.88985 17.6201 5.12604 18.3454 3.31623 18.9487C2.53447 19.2093 1.79073 18.4655 2.05132 17.6838C2.65459 15.874 3.37995 14.1102 4.22131 12.4042zM7.41758 15.1283C6.9475 14.5698 6.43024 14.0525 5.87171 13.5824C5.43696 14.4825 5.03594 15.3991 4.66964 16.3304C5.60092 15.9641 6.51753 15.563 7.41758 15.1283z'/%3E%3C/svg%3E");
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+    }
+    .slab-rocket .rocket-fallback{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.6885em;
+      width: auto;
+      color: #FFFFFF;
+    }
+    
+    .slab-search{
+      background: var(--chartreuse);
+      color: var(--ink);
+      line-height: 1;
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 1.4em 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      position: relative;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .slab-search .icon{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1em;
+      width: auto;
+      color: #FFFFFF;
+    }
+    
+    .slab-robot{
+      background: var(--chartreuse);
+      color: var(--ink);
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 1.4em 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      position: relative;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .slab-robot .robot{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.765em;
+      width: auto;
+    }
+    
+    .slab-network{
+      background: var(--chartreuse);
+      color: var(--ink);
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 1.4em 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      position: relative;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .slab-network .network{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.765em;
+      width: auto;
+    }
+    
+    .slab-data{
+      background: var(--chartreuse);
+      color: var(--ink);
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 1.4em 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      position: relative;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .slab-data .data{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.87975em;
+      width: auto;
+    }
+    
+    .slab-layers{
+      background: var(--chartreuse);
+      color: var(--ink);
+      border-radius: 12px;
+      margin-top: 12px;
+      padding: 3px 1.4em 8px 16px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 800;
+      white-space: nowrap;
+      position: relative;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .slab-layers .layers{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.765em;
+      width: auto;
+    }
+    
+    /* Slab copy and tooltip system */
+    .slab-wrapper{
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .copy-slab{
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 8px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px);
+    }
+    .copy-slab:hover{
+      background: rgba(255,255,255,1);
+      border-color: rgba(0,0,0,0.15);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transform: translateY(-1px);
+    }
+    .copy-slab:active{
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .copy-slab svg{
+      width: 16px;
+      height: 16px;
+      opacity: 0.7;
+      color: #374151;
+    }
+    .copy-slab:hover svg{
+      opacity: 1;
+      color: #111827;
+    }
+    .slab-tooltip{
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 0;
+      background: #2d2d2d;
+      color: #e6e6e6;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+      white-space: pre-wrap;
+      width: 250px;
+      height: 250px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+      line-height: 1.4;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .slab-tooltip:before{
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 16px;
+      border: 6px solid transparent;
+      border-top-color: #2d2d2d;
+    }
+    .slab-tooltip-content{
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .slab-tooltip-content::-webkit-scrollbar{
+      width: 4px;
+    }
+    .slab-tooltip-content::-webkit-scrollbar-track{
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+    }
+    .slab-tooltip-content::-webkit-scrollbar-thumb{
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+    }
+    .slab-tooltip-content::-webkit-scrollbar-thumb:hover{
+      background: rgba(255,255,255,0.5);
+    }
+    .copy-slab:hover .slab-tooltip{
+      opacity: 1;
+      visibility: visible;
+    }
+    .slab-tooltip .code-section{
+      margin-bottom: 8px;
+      width: 100%;
+    }
+    .slab-tooltip .code-section:last-child{
+      margin-bottom: 0;
+    }
+    .slab-tooltip .code-label{
+      color: #60a5fa;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .slab-tooltip .code-content{
+      color: #d1d5db;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+
+    
     .btn{border-radius:9999px;padding:12px 18px;font-weight:700}
     .btn-primary{background:var(--primary);color:#fff}
     .btn-primary:hover{background:var(--primary-hover)}
-    .btn-primary:focus{outline:3px solid var(--primary-press);outline-offset:2px}
+    .btn-primary:focus{background:#fff;color:#000;border:1px solid #000;outline:none}
+    .btn-primary:active{background:var(--primary) !important;color:#fff !important;border:none !important;transform:translateY(0) !important;box-shadow:none !important}
+    .btn-primary:not(:active):not(:focus):not(:hover){background:var(--primary);color:#fff;border:none}
     .btn-register{background:var(--chartreuse);color:var(--ink)}
     .btn{transition:transform .12s ease, box-shadow .12s ease}
     .btn:hover{transform:translateY(-1px); box-shadow:0 6px 20px rgba(0,0,0,.08)}
@@ -102,18 +465,18 @@
   <!-- Hero -->
   <section class="mx-auto max-w-[1200px] px-6 pt-12 pb-6">
     <p class="badge inline-flex items-center gap-2">Brand Kit • v1.0</p>
-    <h1 class="mt-5 ink text-5xl md:text-6xl font-extrabold leading-tight">
-      With <span class="brand-gradient">Embedded AI</span>,<br/>
-      you can simplify learning <span class="slab-curve">curve
-        <svg class="bolt" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
-        </svg>
-      </span>
-    </h1>
+      <h1 class="mt-5 ink text-5xl md:text-6xl font-extrabold leading-tight">
+    Learn to <span class="brand-gradient">Outthink</span> the <br/>competition through <span class="slab-square" style="line-height: 1; padding: 13px 1.4em 16px 16px;">Outskilling
+      <div class="bolt"></div>
+      <svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
+      </svg>
+    </span>
+  </h1>
     <p class="mt-4 max-w-2xl text-lg">This single page renders real tokens, components, and examples so designers, engineers, and marketing can build consistently—no guessing.</p>
     <div class="mt-6 flex flex-wrap gap-3">
-      <button class="btn btn-primary">Primary CTA</button>
-      <button class="btn btn-register">Register (Chartreuse)</button>
+      <button class="btn btn-primary">Primary (CTA)</button>
+      <button class="btn btn-register">Register</button>
     </div>
   </section>
 
@@ -126,7 +489,7 @@
       </div>
       <div class="mt-6 grid-auto">
         <div class="token p-4">
-          <h3 class="font-semibold ink">Default Lockup (Dark on Light)</h3>
+          <h3 class="font-semibold ink">Lockup (Dark on Light)</h3>
           <div class="logo-slot mt-3 bg-white">
             <img class="logo-img" loading="lazy" alt="Outpacers dark wordmark with green arrow" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Logo-Mock_v3.1b-B-transparent.png"/>
           </div>
@@ -144,7 +507,7 @@
           </div>
         </div>
         <div class="token p-4">
-          <h3 class="font-semibold ink">Arrow Mark – App Icon / Favicon</h3>
+          <h3 class="font-semibold ink">App/Favicon</h3>
           <div class="logo-slot mt-3 bg-white">
             <img class="logo-img" loading="lazy" alt="Outpacers green arrow mark" src="https://www.interplicity.com/wp-content/files/oai/Outpacers_Arrow-Green-BGTransparent-L.png"/>
           </div>
@@ -206,7 +569,7 @@
         <div class="mt-3 flex items-center justify-between">
           <div>
             <div class="ink font-semibold">Chartreuse Highlight</div>
-            <div class="label">Register button & slab highlight</div>
+            <div class="label">Button & slab highlight</div>
           </div>
           <button class="copy text-sm font-mono" data-hex="--chartreuse">#DDF700</button>
         </div>
@@ -249,7 +612,7 @@
     <p class="mt-2 label">Family: Inter (Regular, Medium, Semibold, Bold, ExtraBold) + Italics.</p>
 
     <div class="token p-6 mt-6">
-      <div class="ink text-5xl md:text-6xl font-extrabold leading-tight">Everything you <span class="brand-gradient">ace</span> to nail your interview</div>
+      <div class="ink text-5xl md:text-6xl font-extrabold leading-tight">Everything you need to nail <br/>your <span class="brand-gradient">Next Interview</span></div>
       <p class="mt-3 text-lg">Lead (18/1.6): Clear, encouraging, high-trust. Keep line length ~68ch for readability.</p>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
         <div>
@@ -278,6 +641,293 @@
         </div>
       </div>
     </div>
+
+    <div class="token p-6 mt-6">
+      <div class="ink text-5xl md:text-6xl font-extrabold leading-tight"><span class="brand-gradient">Outthink</span> the competition<br/> through <span class="slab-square">Outskilling
+        <div class="bolt"></div>
+        <svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
+        </svg>
+      </span></div>
+      <p class="mt-3 text-lg">Hero Headline (48/60): Bold, impactful messaging with brand gradient and chartreuse slab highlight.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="ink font-semibold">Brand Gradient Text</div>
+          <p class="mt-1">Blue to purple gradient for emphasis: <span class="brand-gradient"><strong>Outthink</strong></span></p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Chartreuse Slab Highlight</div>
+          <p class="mt-1">Square slab with knockout (bolt) icon: <span class="slab-square">highlight
+            <div class="bolt"></div>
+
+          </span></p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Typography Scale</div>
+          <p class="mt-1">text-5xl md:text-6xl (48px/60px) with font-extrabold (800)</p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Line Height</div>
+          <p class="mt-1">leading-tight for dramatic, impactful headlines</p>
+        </div>
+      </div>
+      <p>&nbsp;<hr><br/></p>      
+      <div class="ink text-3xl font-extrabold mb-4">Stylized Icon End-caps</div>
+      <p class="mt-2 text-lg">Eight different icon options for end-of-sentence highlights with AI/tech themes.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+                  <div>
+            <div class="ink font-semibold">Lightning Bolt (Default)</div>
+            <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-wrapper">
+              <span class="slab-square">Outpacing
+                <div class="bolt"></div>
+                <svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <button class="copy-slab" data-slab="lightning">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+                </svg>
+                <div class="slab-tooltip">
+                  <div class="slab-tooltip-content">
+                    <div class="code-section">
+                      <span class="code-label">CSS:</span>
+                      <div class="code-content">:root{
+  --chartreuse:#CCFF04;
+  --ink:#0E1116;
+}
+.slab-square{
+  background: var(--chartreuse);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 11px 1.2em 11px 14px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  white-space: nowrap;
+  position: relative;
+  line-height: 1.24;
+  text-wrap: balance;
+}
+.slab-square .bolt{
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1em;
+  width: auto;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L3 14h7l-1 8 10-12h-7l1-8z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: #FFFFFF;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L3 14h7l-1 8 10-12h-7l1-8z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+.slab-square .bolt-fallback{
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1em;
+  width: auto;
+  color: #FFFFFF;
+}</div>
+                    </div>
+                    <div class="code-section">
+                      <span class="code-label">HTML:</span>
+                      <div class="code-content">&lt;span class="slab-square"&gt;Outpacing
+  &lt;div class="bolt"&gt;&lt;/div&gt;
+  &lt;svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"&gt;
+    &lt;path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;</div>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </span></div>
+          </div>
+        <div>
+          <div class="ink font-semibold">Brain Icon</div>
+          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-wrapper">
+            <span class="slab-brain">Intelligence
+              <svg class="brain" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:1.91px;}</style>
+                </defs>
+                <g id="brain">
+                  <path class="cls-1" d="M12,4.36V20.59a1.92,1.92,0,0,1-1.91,1.91,1.93,1.93,0,0,1-1.91-1.91v0a2.45,2.45,0,0,1-.48,0,3.35,3.35,0,0,1-3.34-3.34,3.19,3.19,0,0,1,.08-.7A4.29,4.29,0,0,1,3.6,8.79,3.24,3.24,0,0,1,3.41,7.7,3.34,3.34,0,0,1,6.27,4.4v0a2.87,2.87,0,0,1,5.73,0Z"></path>
+                  <path class="cls-1" d="M6.75,11.05a3.35,3.35,0,0,1,0-6.69"></path>
+                  <path class="cls-1" d="M8.18,13.91h0A3.82,3.82,0,0,1,12,17.73h0"></path>
+                  <path class="cls-1" d="M9.14,7.23h0A2.86,2.86,0,0,0,12,4.36h0"></path>
+                  <path class="cls-1" d="M12,4.36V20.59a1.92,1.92,0,0,0,1.91,1.91,1.93,1.93,0,0,0,1.91-1.91v0a2.45,2.45,0,0,0,.48,0,3.35,3.35,0,0,0,3.34-3.34,3.19,3.19,0,0,0-.08-.7,4.29,4.29,0,0,0,.84-7.76,3.24,3.24,0,0,0,.19-1.09,3.34,3.34,0,0,0-2.86-3.3v0a2.87,2.87,0,0,0-5.73,0Z"></path>
+                  <path class="cls-1" d="M17.25,11.05a3.35,3.35,0,0,0,0-6.69"></path>
+                  <path class="cls-1" d="M15.82,13.91h0A3.82,3.82,0,0,0,12,17.73h0"></path>
+                  <path class="cls-1" d="M14.86,7.23h0A2.86,2.86,0,0,1,12,4.36h0"></path>
+                </g>
+              </svg>
+            </span>
+            <button class="copy-slab" data-slab="brain">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+              </svg>
+              <div class="slab-tooltip">
+                <div class="slab-tooltip-content">
+                                      <div class="code-section">
+                      <span class="code-label">CSS:</span>
+                      <div class="code-content">:root{
+  --chartreuse:#CCFF04;
+  --ink:#0E1116;
+}
+.slab-brain{
+  background: var(--chartreuse);
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 11px 1.4em 11px 16px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  white-space: nowrap;
+  position: relative;
+  line-height: 1.24;
+  text-wrap: balance;
+}
+.slab-brain .brain{
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.7em;
+  width: auto;
+  display: inline-block;
+}
+.slab-brain .brain path{
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-width: 0.02em;
+}</div>
+                    </div>
+                  <div class="code-section">
+                    <span class="code-label">HTML:</span>
+                    <div class="code-content">&lt;span class="slab-brain"&gt;Intelligence
+  &lt;svg class="brain" viewBox="0 0 24 24" aria-hidden="true"&gt;
+    &lt;g&gt;
+      &lt;path d="M12,4.36V20.59a1.92,1.92,0,0,1-1.91,1.91,1.93,1.93,0,0,1-1.91-1.91v0a2.45,2.45,0,0,1-.48,0,3.35,3.35,0,0,1-3.34-3.34,3.19,3.19,0,0,1,.08-.7A4.29,4.29,0,0,1,3.6,8.79,3.24,3.24,0,0,1,3.41,7.7,3.34,3.34,0,0,1,6.27,4.4v0a2.87,2.87,0,0,1,5.73,0Z"/&gt;
+      &lt;path d="M6.75,11.05a3.35,3.35,0,0,1,0-6.69"/&gt;
+      &lt;path d="M8.18,13.91h0A3.82,3.82,0,0,1,12,17.73h0"/&gt;
+      &lt;path d="M9.14,7.23h0A2.86,2.86,0,0,0,12,4.36h0"/&gt;
+      &lt;path d="M12,4.36V20.59a1.92,1.92,0,0,0,1.91,1.91,1.93,1.93,0,0,0,1.91-1.91v0a2.45,2.45,0,0,0,.48,0,3.35,3.35,0,0,0,3.34-3.34,3.19,3.19,0,0,0-.08-.7,4.29,4.29,0,0,0,.84-7.76,3.24,3.24,0,0,0-.19-1.09,3.34,3.34,0,0,0-2.86-3.3v0a2.87,2.87,0,0,0-5.73,0Z"/&gt;
+      &lt;path d="M17.25,11.05a3.35,3.35,0,0,0,0-6.69"/&gt;
+      &lt;path d="M15.82,13.91h0A3.82,3.82,0,0,0,12,17.73h0"/&gt;
+      &lt;path d="M14.86,7.23h0A2.86,2.86,0,0,1,12,4.36h0"/&gt;
+    &lt;/g&gt;
+  &lt;/svg&gt;
+&lt;/span&gt;</div>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </span></div>
+        </div>
+        <div>
+          <div class="ink font-semibold">Rocket Icon</div>
+          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-rocket">Accelerate
+            <div class="rocket"></div>
+            <svg class="rocket-fallback" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.22131 12.4042C3.15911 11.767 1.99505 11.2795 0.75747 10.9701C0.00338 10.7816 -0.256736 9.8425 0.29289 9.2929L2.12132 7.46447C3.059 6.52678 4.33077 6 5.65686 6H8.12714L8.59713 5.35377C11.0434 1.99009 14.9515 0 19.1107 0H20C20.5523 0 21 0.44772 21 1V1.8893C21 6.04848 19.0099 9.9566 15.6462 12.4029L15.2107 12.7196L15.4209 13.5603C15.8468 15.2642 15.3476 17.0666 14.1057 18.3085L11.7071 20.7071C11.1575 21.2567 10.2184 20.9966 10.0299 20.2425C9.7205 19.0049 9.233 17.8409 8.59583 16.7787C6.88985 17.6201 5.12604 18.3454 3.31623 18.9487C2.53447 19.2093 1.79073 18.4655 2.05132 17.6838C2.65459 15.874 3.37995 14.1102 4.22131 12.4042zM7.41758 15.1283C6.9475 14.5698 6.43024 14.0525 5.87171 13.5824C5.43696 14.4825 5.03594 15.3991 4.66964 16.3304C5.60092 15.9641 6.51753 15.563 7.41758 15.1283z" fill="#FFFFFF"/>
+            </svg>
+          </span></div>
+        </div>
+        <div>
+          <div class="ink font-semibold">Search/Magnifying Glass</div>
+          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-search">Discovery
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#FFFFFF"/>
+            </svg>
+          </span></div>
+        </div>
+        <div>
+          <div class="ink font-semibold">Robot Icon</div>
+          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-robot">Agentic AI
+            <svg class="robot" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#ffffff" fill-rule="evenodd" d="M12 3a2 2 0 0 0-1 3.732V8H8c-3.2 0-4 2.667-4 4v7c0 .667.4 2 2 2h1v-4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v4h1c1.6 0 2-1.333 2-2v-7c0-3.2-2.667-4-4-4h-3V6.732A2 2 0 0 0 12 3zm3 18v-3h-2v3h2zm-4 0v-3H9v3h2zm10-3v-5c.667 0 2 .4 2 2v1c0 .667-.4 2-2 2zM3 13v5c-1.6 0-2-1.333-2-2v-1c0-1.6 1.333-2 2-2zm6-1a1 1 0 1 0 0 2h.001a1 1 0 1 0 0-2H9zm5 1a1 1 0 0 1 1-1h.001a1 1 0 1 1 0 2H15a1 1 0 0 1-1-1z" clip-rule="evenodd"/>
+            </svg>
+          </span></div>
+        </div>
+        <div>
+          <div class="ink font-semibold">Network/Connection</div>
+          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-network">Connect
+            <svg class="network" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M40,18a6.2,6.2,0,0,0-5.7,4H25.8a9.9,9.9,0,0,0-1.5-3.3l3.5-4.1A7.8,7.8,0,0,0,30,15a6,6,0,1,0-6-6,6.1,6.1,0,0,0,.8,3l-3.6,4.1A8.5,8.5,0,0,0,17,15l-1.7.2-1.2-2.8A6,6,0,1,0,10,14h.4l1.3,2.8a8.9,8.9,0,0,0,0,14.4L10.4,34H10a6,6,0,1,0,4.1,1.6l1.2-2.8L17,33a8.5,8.5,0,0,0,4.2-1.1L24.8,36a6.1,6.1,0,0,0-.8,3,6,6,0,1,0,6-6,7.8,7.8,0,0,0-2.2.4l-3.5-4.1A9.9,9.9,0,0,0,25.8,26h8.5A6.2,6.2,0,0,0,40,30a6,6,0,0,0,0-12Z" fill="#ffffff"/>
+            </svg>
+          </span></div>
+        </div>
+        <div>
+          <div class="ink font-semibold">Data/List Icon</div>
+          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-data">Services
+            <svg class="data" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g id="System / Data">
+                <path id="Vector" d="M18 12V17C18 18.6569 15.3137 20 12 20C8.68629 20 6 18.6569 6 17V12M18 12V7M18 12C18 13.6569 15.3137 15 12 15C8.68629 15 6 13.6569 6 12M18 7C18 5.34315 15.3137 4 12 4C8.68629 4 6 5.34315 6 7M18 7C18 8.65685 15.3137 10 12 10C8.68629 10 6 8.65685 6 7M6 12V7" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </span></div>
+        </div>
+        <div>
+          <div class="ink font-semibold">Layers/Stack Icon</div>
+          <div class="mt-1 text-5xl md:text-6xl font-extrabold leading-tight"><span class="slab-layers">Innovate
+            <svg class="layers" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g id="Layer_2" data-name="Layer 2">
+                <g id="invisible_box" data-name="invisible box">
+                  <rect width="48" height="48" fill="none"/>
+                </g>
+                <g id="Icons">
+                  <g>
+                    <path d="M25.5,25.7l-1.5,1-1.5-1a2.2,2.2,0,0,0-2.8.7,2.1,2.1,0,0,0,.7,2.8L23,30.7a1.8,1.8,0,0,0,2,0l2.6-1.5a2.1,2.1,0,0,0,.7-2.8A2.2,2.2,0,0,0,25.5,25.7Z" fill="#ffffff"/>
+                    <path d="M3,18.7l2.5,1.5a2.3,2.3,0,0,0,1.1.3,2.1,2.1,0,0,0,1.7-.9A2,2,0,0,0,7.8,17a2,2,0,0,0,.5-2.6,2.2,2.2,0,0,0-2.8-.7L3,15.3A1.9,1.9,0,0,0,2,17,2.1,2.1,0,0,0,3,18.7Z" fill="#ffffff"/>
+                    <path d="M12,14.2a1.9,1.9,0,0,0,1-.3l4.1-2.4a2,2,0,0,0,.6-2.7A1.9,1.9,0,0,0,15,8.1l-4.1,2.4a2,2,0,0,0-.6,2.7A1.8,1.8,0,0,0,12,14.2Z" fill="#ffffff"/>
+                    <path d="M22.5,8.3l1.5-1,1.5,1a2.2,2.2,0,0,0,1.1.2,2,2,0,0,0,1.7-.9,2.1,2.1,0,0,0-.7-2.8L25,3.3a1.8,1.8,0,0,0-2,0L20.4,4.8a2.1,2.1,0,0,0-.7,2.8A2.2,2.2,0,0,0,22.5,8.3Z" fill="#ffffff"/>
+                    <path d="M30.9,11.5,35,13.9a1.9,1.9,0,0,0,1,.3,1.8,1.8,0,0,0,1.7-1,2,2,0,0,0-.6-2.7L33,8.1a1.9,1.9,0,0,0-2.7.7A2,2,0,0,0,30.9,11.5Z" fill="#ffffff"/>
+                    <path d="M40.2,17a2,2,0,0,0-.5,2.6,2.1,2.1,0,0,0,1.7.9,2.3,2.3,0,0,0,1.1-.3L45,18.7A2.1,2.1,0,0,0,46,17a1.9,1.9,0,0,0-1-1.7l-2.5-1.6a2.2,2.2,0,0,0-2.8.7A2,2,0,0,0,40.2,17Z" fill="#ffffff"/>
+                    <path d="M45,28.3l-7.9-4.8h0a2.1,2.1,0,0,0,.6-2.8,1.9,1.9,0,0,0-2.7-.6l-4.1,2.4a2,2,0,0,0-.6,2.7,1.8,1.8,0,0,0,1.7,1,1.9,1.9,0,0,0,1-.3h.2l.5.3L40.1,30,24,39.7,7.9,30l6.9-4.2H15a1.9,1.9,0,0,0,1,.3,1.8,1.8,0,0,0,1.7-1,2,2,0,0,0-.6-2.7L13,20.1a1.9,1.9,0,0,0-2.7.6,2.1,2.1,0,0,0,.6,2.8h0L3,28.3A1.9,1.9,0,0,0,2,30a2.1,2.1,0,0,0,1,1.7l20,12a1.8,1.8,0,0,0,2,0l20-12A2.1,2.1,0,0,0,46,30,1.9,1.9,0,0,0,45,28.3Z" fill="#ffffff"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="token p-6 mt-6">
+      <div class="ink text-5xl md:text-6xl font-extrabold leading-tight">Simply <span class="slab-highlight">Outbuild</span> them for <br/>your competitive advantage.</div>
+      <p class="mt-3 text-lg">Mid-Sentence Highlight (48/60): Chartreuse slab applied to middle word for emphasis without icon.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="ink font-semibold">Mid-Sentence Emphasis</div>
+          <p class="mt-1">Chartreuse highlight on middle word: <span class="slab-highlight">emphasis</span></p>
+        </div>
+        <div>
+          <div class="ink font-semibold">No Icon Variant</div>
+          <p class="mt-1">Clean slab without lightning bolt for subtle emphasis</p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Typography Scale</div>
+          <p class="mt-1">text-5xl md:text-6xl (48px/60px) with font-extrabold (800)</p>
+        </div>
+        <div>
+          <div class="ink font-semibold">Line Height</div>
+          <p class="mt-1">leading-tight for dramatic, impactful headlines</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- Components -->
@@ -401,6 +1051,37 @@
   setBtnTooltip('.btn-primary','Primary');
   setBtnTooltip('.btn-register','Chartreuse');
   setBtnTooltip('.btn-secondary','Secondary outline');
+
+  // === Slab copy functionality ===
+  document.querySelectorAll('.copy-slab').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tooltip = btn.querySelector('.slab-tooltip');
+      const text = tooltip.textContent;
+      
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = tooltip.textContent;
+        tooltip.textContent = 'Copied!';
+        setTimeout(() => {
+          tooltip.textContent = originalText;
+        }, 1000);
+      }).catch(() => {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        const originalText = tooltip.textContent;
+        tooltip.textContent = 'Copied!';
+        setTimeout(() => {
+          tooltip.textContent = originalText;
+        }, 1000);
+      });
+    });
+  });
 
   // === Inline Contrast Checker ===
   const fgInput=document.getElementById('fgColor');
