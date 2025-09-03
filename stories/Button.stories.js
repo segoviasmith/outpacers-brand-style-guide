@@ -25,12 +25,15 @@ export const Primary = {
   args: {
     primary: true,
     label: 'Button',
+    backgroundColor: "#5524E0",
+    size: "medium"
   },
 };
 
 export const Secondary = {
   args: {
     label: 'Button',
+    size: "medium"
   },
 };
 
