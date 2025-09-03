@@ -651,7 +651,7 @@
     
 
     
-    .btn{border-radius:9999px;padding:12px 18px;font-weight:700}
+    .btn{border-radius:var(--radius);padding:12px 18px;font-weight:700}
     .btn-primary{
       background: var(--primary);
       color: var(--primary-foreground);
@@ -691,19 +691,19 @@
       color: var(--primary-foreground);
       border: none;
     }
-    .btn-register{background:var(--chartreuse);color:var(--ink)}
+    .btn-register{background:var(--chartreuse);color:var(--ink);border-radius:var(--radius)}
     .btn{transition:transform .12s ease, box-shadow .12s ease}
     .btn:hover{transform:translateY(-1px); box-shadow:0 6px 20px rgba(0,0,0,.08)}
     .btn:active{transform:translateY(0); box-shadow:none}
     .btn[disabled]{opacity:.5;cursor:not-allowed}
-    .btn-secondary{background:var(--white);border:1px solid var(--primary);color:var(--primary)}
+    .btn-secondary{background:var(--white);border:1px solid var(--primary);color:var(--primary);border-radius:var(--radius)}
     .btn-secondary:hover{background:#F5EFFF}
     .btn-register:hover{filter:brightness(0.94)}
     .token{border:1px solid var(--hairline);border-radius:12px;box-shadow:var(--shadow)}
     .swatch{border-radius:12px;border:1px solid var(--hairline)}
-    .badge{background:#F4F6FA;border:1px solid #E5E7EF;color:var(--ink);border-radius:999px;padding:6px 10px;font-size:.8rem}
+    .badge{background:#F4F6FA;border:1px solid #E5E7EF;color:var(--ink);border-radius:var(--radius);padding:6px 10px;font-size:.8rem}
     .chip{background:var(--chip-bg);border:1px solid var(--hairline);border-radius:16px;padding:14px 16px;display:flex;gap:10px;align-items:center}
-    .label{font-size:.8rem;color:var(--muted)}
+    .label{font-size:.8rem;color:var(--muted-foreground);font-weight:500}
     .logo-slot{border:1px dashed var(--hairline);border-radius:12px;min-height:140px;display:flex;align-items:center;justify-content:center}
     .h-card{border-radius:var(--radius-card);box-shadow:var(--shadow)}
     .grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
@@ -896,7 +896,7 @@
           </div>
         </div>
       </div>
-      <p class="mt-4 text-sm text-[var(--muted)]">Clear-space: 1× the height of the mark on all sides. Minimum digital size: 24px height.<br/>* <em>Use for app icons, favicons, avatars. Recommended 180×180 for Apple Touch; 32×32/16×16 for favicons.</em></p>
+      <p class="mt-4 text-sm text-[var(--muted-foreground)]">Clear-space: 1× the height of the mark on all sides. Minimum digital size: 24px height.<br/>* <em>Use for app icons, favicons, avatars. Recommended 180×180 for Apple Touch; 32×32/16×16 for favicons.</em></p>
     </div>
   </section>
 
@@ -972,7 +972,7 @@
           </div>
         </div>
         <div class="mt-5 ink text-4xl md:text-5xl font-extrabold leading-tight">
-          <span class="brand-gradient">Outthink</span> <span class="ink">Everyone</span>
+          <span class="ink">Outthink</span> <span class="ink">Everyone</span>
         </div>
       </div>
     </div>
@@ -1148,7 +1148,7 @@ h1{
       <div class="mt-6 grid md:grid-cols-2 gap-6">
         <div>
           <div class="ink font-semibold">Brand Gradient Text</div>
-          <p class="mt-1">Blue to purple gradient for emphasis: <span class="brand-gradient"><strong>Outthink</strong></span></p>
+          <p class="mt-1">Blue to purple gradient for emphasis: <span class="ink"><strong>Outthink</strong></span></p>
         </div>
         <div>
           <div class="ink font-semibold">Chartreuse Slab Highlight</div>
@@ -1973,7 +1973,7 @@ h1{
       <!-- Cards / Elevation -->
       <div class="token p-5">
         <h3 class="ink font-semibold text-xl" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">Elevation & Radius</h3>
-        <div class="mt-4 grid sm:grid-cols-3 gap-4">
+        <div class="mt-4 flex flex-col gap-4">
           <div class="p-4 bg-white rounded-[var(--radius)] shadow-[var(--shadow-md)]">
             <div class="label">Card • radius var(--radius) • medium shadow</div>
           </div>
@@ -2007,23 +2007,27 @@ h1{
   <footer class="mt-10 py-10 border-t border-[var(--border)]">
     <div class="mx-auto max-w-[1200px] px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <div class="flex items-center gap-2">
-          <!-- Filled version -->
-          <svg class="w-5 h-5" viewBox="0 0 3000 3000" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
-              <path d="M2125 2681 c-97 -81 -1394 -1100 -1414 -1111 -9 -4 -14 -10 -11 -12 8 -6 497 -448 568 -513 35 -32 64 -56 65 -54 2 2 84 175 182 384 213 452 624 1280 631 1272 6 -6 -152 -360 -500 -1120 -131 -285 -236 -520 -234 -521 2 -2 39 -9 82 -16 43 -6 220 -38 392 -69 l314 -57 0 938 c0 516 -1 938 -2 938 -2 -1 -34 -27 -73 -59z m-78 -153 c-13 -24 -38 -68 -54 -98 -49 -89 -283 -554 -347 -690 -33 -69 -83 -174 -111 -235 -29 -60 -78 -164 -110 -230 -31 -66 -65 -139 -75 -161 -10 -23 -23 -45 -29 -49 -6 -3 -36 15 -65 42 -279 249 -486 440 -486 448 0 6 34 37 76 69 41 33 84 67 94 75 10 9 82 66 160 126 78 61 223 175 323 254 100 79 206 162 236 184 30 22 64 48 75 58 87 75 314 249 324 249 10 0 7 -13 -11 -42z m113 -786 c0 -447 -4 -803 -9 -811 -10 -15 -23 -14 -271 29 -58 10 -161 28 -230 40 -69 12 -137 26 -153 32 -33 13 -33 12 30 147 25 53 51 110 58 126 7 17 32 71 55 120 23 50 50 108 60 130 10 22 29 65 43 95 22 48 128 282 204 450 14 30 38 82 53 115 16 33 49 112 75 175 25 63 50 125 55 138 6 13 14 20 20 17 6 -4 9 -301 10 -803z"/>
-              <path d="M687 1236 l-147 -141 342 -58 c189 -32 357 -61 373 -64 17 -3 28 -4 25 -1 -20 18 -400 366 -420 384 l-25 22 -148 -142z m238 12 c44 -40 111 -103 150 -140 l70 -68 -32 0 c-17 0 -67 7 -110 15 -43 8 -135 24 -205 35 -129 20 -158 27 -158 38 0 11 184 192 196 192 6 0 46 -33 89 -72z"/>
-              <path d="M1360 924 c91 -101 454 -489 459 -491 3 -2 28 88 55 199 27 110 51 208 53 218 4 14 -5 18 -49 24 -50 7 -451 77 -528 92 l-35 7 45 -49z m511 -96 c10 -15 -54 -284 -71 -302 -5 -5 -21 3 -37 20 -24 25 -194 208 -290 313 -18 19 -28 38 -23 41 13 8 413 -61 421 -72z"/>
-            </g>
-          </svg>
-          <!-- Lined outline version -->
-          <svg class="w-5 h-5" viewBox="0 0 3000 3000" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-              <path d="M2125 2681 c-97 -81 -1394 -1100 -1414 -1111 -9 -4 -14 -10 -11 -12 8 -6 497 -448 568 -513 35 -32 64 -56 65 -54 2 2 84 175 182 384 213 452 624 1280 631 1272 6 -6 -152 -360 -500 -1120 -131 -285 -236 -520 -234 -521 2 -2 39 -9 82 -16 43 -6 220 -38 392 -69 l314 -57 0 938 c0 516 -1 938 -2 938 -2 -1 -34 -27 -73 -59z m-78 -153 c-13 -24 -38 -68 -54 -98 -49 -89 -283 -554 -347 -690 -33 -69 -83 -174 -111 -235 -29 -60 -78 -164 -110 -230 -31 -66 -65 -139 -75 -161 -10 -23 -23 -45 -29 -49 -6 -3 -36 15 -65 42 -279 249 -486 440 -486 448 0 6 34 37 76 69 41 33 84 67 94 75 10 9 82 66 160 126 78 61 223 175 323 254 100 79 206 162 236 184 30 22 64 48 75 58 87 75 314 249 324 249 10 0 7 -13 -11 -42z m113 -786 c0 -447 -4 -803 -9 -811 -10 -15 -23 -14 -271 29 -58 10 -161 28 -230 40 -69 12 -137 26 -153 32 -33 13 -33 12 30 147 25 53 51 110 58 126 7 17 32 71 55 120 23 50 50 108 60 130 10 22 29 65 43 95 22 48 128 282 204 450 14 30 38 82 53 115 16 33 49 112 75 175 25 63 50 125 55 138 6 13 14 20 20 17 6 -4 9 -301 10 -803z"/>
-              <path d="M687 1236 l-147 -141 342 -58 c189 -32 357 -61 373 -64 17 -3 28 -4 25 -1 -20 18 -400 366 -420 384 l-25 22 -148 -142z m238 12 c44 -40 111 -103 150 -140 l70 -68 -32 0 c-17 0 -67 7 -110 15 -43 8 -135 24 -205 35 -129 20 -158 27 -158 38 0 11 184 192 196 192 6 0 46 -33 89 -72z"/>
-              <path d="M1360 924 c91 -101 454 -489 459 -491 3 -2 28 88 55 199 27 110 51 208 53 218 4 14 -5 18 -49 24 -50 7 -451 77 -528 92 l-35 7 45 -49z m511 -96 c10 -15 -54 -284 -71 -302 -5 -5 -21 3 -37 20 -24 25 -194 208 -290 313 -18 19 -28 38 -23 41 13 8 413 -61 421 -72z"/>
-            </g>
-          </svg>
+        <div class="flex items-center gap-3">
+          <!-- Filled version (White on Black) -->
+          <div class="bg-black p-2 rounded">
+            <svg class="w-8 h-8" viewBox="0 0 3000 3000" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+                <path d="M2125 2681 c-97 -81 -1394 -1100 -1414 -1111 -9 -4 -14 -10 -11 -12 8 -6 497 -448 568 -513 35 -32 64 -56 65 -54 2 2 84 175 182 384 213 452 624 1280 631 1272 6 -6 -152 -360 -500 -1120 -131 -285 -236 -520 -234 -521 2 -2 39 -9 82 -16 43 -6 220 -38 392 -69 l314 -57 0 938 c0 516 -1 938 -2 938 -2 -1 -34 -27 -73 -59z m-78 -153 c-13 -24 -38 -68 -54 -98 -49 -89 -283 -554 -347 -690 -33 -69 -83 -174 -111 -235 -29 -60 -78 -164 -110 -230 -31 -66 -65 -139 -75 -161 -10 -23 -23 -45 -29 -49 -6 -3 -36 15 -65 42 -279 249 -486 440 -486 448 0 6 34 37 76 69 41 33 84 67 94 75 10 9 82 66 160 126 78 61 223 175 323 254 100 79 206 162 236 184 30 22 64 48 75 58 87 75 314 249 324 249 10 0 7 -13 -11 -42z m113 -786 c0 -447 -4 -803 -9 -811 -10 -15 -23 -14 -271 29 -58 10 -161 28 -230 40 -69 12 -137 26 -153 32 -33 13 -33 12 30 147 25 53 51 110 58 126 7 17 32 71 55 120 23 50 50 108 60 130 10 22 29 65 43 95 22 48 128 282 204 450 14 30 38 82 53 115 16 33 49 112 75 175 25 63 50 125 55 138 6 13 14 20 20 17 6 -4 9 -301 10 -803z"/>
+                <path d="M687 1236 l-147 -141 342 -58 c189 -32 357 -61 373 -64 17 -3 28 -4 25 -1 -20 18 -400 366 -420 384 l-25 22 -148 -142z m238 12 c44 -40 111 -103 150 -140 l70 -68 -32 0 c-17 0 -67 7 -110 15 -43 8 -135 24 -205 35 -129 20 -158 27 -158 38 0 11 184 192 196 192 6 0 46 -33 89 -72z"/>
+                <path d="M1360 924 c91 -101 454 -489 459 -491 3 -2 28 88 55 199 27 110 51 208 53 218 4 14 -5 18 -49 24 -50 7 -451 77 -528 92 l-35 7 45 -49z m511 -96 c10 -15 -54 -284 -71 -302 -5 -5 -21 3 -37 20 -24 25 -194 208 -290 313 -18 19 -28 38 -23 41 13 8 413 -61 421 -72z"/>
+              </g>
+            </svg>
+          </div>
+          <!-- Lined outline version (Black on White) -->
+          <div class="bg-white p-2 rounded border border-gray-300">
+            <svg class="w-8 h-8" viewBox="0 0 3000 3000" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                <path d="M2125 2681 c-97 -81 -1394 -1100 -1414 -1111 -9 -4 -14 -10 -11 -12 8 -6 497 -448 568 -513 35 -32 64 -56 65 -54 2 2 84 175 182 384 213 452 624 1280 631 1272 6 -6 -152 -360 -500 -1120 -131 -285 -236 -520 -234 -521 2 -2 39 -9 82 -16 43 -6 220 -38 392 -69 l314 -57 0 938 c0 516 -1 938 -2 938 -2 -1 -34 -27 -73 -59z m-78 -153 c-13 -24 -38 -68 -54 -98 -49 -89 -283 -554 -347 -690 -33 -69 -83 -174 -111 -235 -29 -60 -78 -164 -110 -230 -31 -66 -65 -139 -75 -161 -10 -23 -23 -45 -29 -49 -6 -3 -36 15 -65 42 -279 249 -486 440 -486 448 0 6 34 37 76 69 41 33 84 67 94 75 10 9 82 66 160 126 78 61 223 175 323 254 100 79 206 162 236 184 30 22 64 48 75 58 87 75 314 249 324 249 10 0 7 -13 -11 -42z m113 -786 c0 -447 -4 -803 -9 -811 -10 -15 -23 -14 -271 29 -58 10 -161 28 -230 40 -69 12 -137 26 -153 32 -33 13 -33 12 30 147 25 53 51 110 58 126 7 17 32 71 55 120 23 50 50 108 60 130 10 22 29 65 43 95 22 48 128 282 204 450 14 30 38 82 53 115 16 33 49 112 75 175 25 63 50 125 55 138 6 13 14 20 20 17 6 -4 9 -301 10 -803z"/>
+                <path d="M687 1236 l-147 -141 342 -58 c189 -32 357 -61 373 -64 17 -3 28 -4 25 -1 -20 18 -400 366 -420 384 l-25 22 -148 -142z m238 12 c44 -40 111 -103 150 -140 l70 -68 -32 0 c-17 0 -67 7 -110 15 -43 8 -135 24 -205 35 -129 20 -158 27 -158 38 0 11 184 192 196 192 6 0 46 -33 89 -72z"/>
+                <path d="M1360 924 c91 -101 454 -489 459 -491 3 -2 28 88 55 199 27 110 51 208 53 218 4 14 -5 18 -49 24 -50 7 -451 77 -528 92 l-35 7 45 -49z m511 -96 c10 -15 -54 -284 -71 -302 -5 -5 -21 3 -37 20 -24 25 -194 208 -290 313 -18 19 -28 38 -23 41 13 8 413 -61 421 -72z"/>
+              </g>
+            </svg>
+          </div>
           <!-- Copy button for SVG code -->
           <button class="copy-slab" data-slab="footer-icons">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
