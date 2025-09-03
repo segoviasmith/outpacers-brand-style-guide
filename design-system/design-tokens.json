@@ -1,0 +1,484 @@
+{
+  "version": "1.2.0",
+  "name": "Outpacers Design System",
+  "description": "Design tokens and variables for the Outpacers brand style guide",
+  
+  "colors": {
+    "primary": {
+      "value": "#5524E0",
+      "type": "color",
+      "description": "Primary brand color - purple"
+    },
+    "chartreuse": {
+      "value": "#CCFF04",
+      "type": "color",
+      "description": "Chartreuse accent color for highlights and CTAs"
+    },
+    "ink": {
+      "value": "#101827",
+      "type": "color",
+      "description": "Primary text color - dark gray"
+    },
+    "background": {
+      "value": "#F9F9F9",
+      "type": "color",
+      "description": "Main page background color"
+    },
+    "white": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "Pure white for cards and backgrounds"
+    },
+    "header": {
+      "value": "#000000",
+      "type": "color",
+      "description": "Navigation header background"
+    },
+    "foreground": {
+      "value": "#101827",
+      "type": "color",
+      "description": "Primary text color"
+    },
+    "muted-foreground": {
+      "value": "#6B7280",
+      "type": "color",
+      "description": "Secondary text color for descriptions"
+    },
+    "border": {
+      "value": "#E5E7EB",
+      "type": "color",
+      "description": "Border color for cards and components"
+    },
+    "hairline": {
+      "value": "#F3F4F6",
+      "type": "color",
+      "description": "Subtle border color for dividers"
+    },
+    "chip-bg": {
+      "value": "#F9FAFB",
+      "type": "color",
+      "description": "Background color for chip components"
+    },
+    "primary-foreground": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "Text color on primary backgrounds"
+    },
+    "accent": {
+      "value": "#F3F4F6",
+      "type": "color",
+      "description": "Accent background color"
+    },
+    "accent-foreground": {
+      "value": "#374151",
+      "type": "color",
+      "description": "Text color on accent backgrounds"
+    },
+    "destructive": {
+      "value": "#EF4444",
+      "type": "color",
+      "description": "Error and destructive action colors"
+    },
+    "destructive-foreground": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "Text color on destructive backgrounds"
+    },
+    "secondary": {
+      "value": "#F3F4F6",
+      "type": "color",
+      "description": "Secondary button and component backgrounds"
+    },
+    "secondary-foreground": {
+      "value": "#374151",
+      "type": "color",
+      "description": "Text color on secondary backgrounds"
+    },
+    "card": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "Card background color"
+    },
+    "popover": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "Popover and dropdown backgrounds"
+    },
+    "input": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "Input field backgrounds"
+    },
+    "ring": {
+      "value": "#5524E0",
+      "type": "color",
+      "description": "Focus ring color"
+    },
+    "chart-1": {
+      "value": "#5524E0",
+      "type": "color",
+      "description": "Chart color 1"
+    },
+    "chart-2": {
+      "value": "#3B82F6",
+      "type": "color",
+      "description": "Chart color 2"
+    },
+    "chart-3": {
+      "value": "#10B981",
+      "type": "color",
+      "description": "Chart color 3"
+    },
+    "chart-4": {
+      "value": "#F59E0B",
+      "type": "color",
+      "description": "Chart color 4"
+    },
+    "chart-5": {
+      "value": "#EF4444",
+      "type": "color",
+      "description": "Chart color 5"
+    },
+    "sidebar": {
+      "value": "#F9FAFB",
+      "type": "color",
+      "description": "Sidebar background color"
+    },
+    "sidebar-foreground": {
+      "value": "#374151",
+      "type": "color",
+      "description": "Sidebar text color"
+    },
+    "sidebar-primary": {
+      "value": "#5524E0",
+      "type": "color",
+      "description": "Sidebar primary accent"
+    },
+    "sidebar-primary-foreground": {
+      "value": "#FFFFFF",
+      "type": "color",
+      "description": "Text on sidebar primary"
+    },
+    "sidebar-accent": {
+      "value": "#F3F4F6",
+      "type": "color",
+      "description": "Sidebar accent background"
+    },
+    "sidebar-accent-foreground": {
+      "value": "#374151",
+      "type": "color",
+      "description": "Text on sidebar accent"
+    },
+    "sidebar-border": {
+      "value": "#E5E7EB",
+      "type": "color",
+      "description": "Sidebar border color"
+    },
+    "sidebar-ring": {
+      "value": "#5524E0",
+      "type": "color",
+      "description": "Sidebar focus ring color"
+    }
+  },
+
+  "typography": {
+    "font-family": {
+      "sans": {
+        "value": "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+        "type": "fontFamily",
+        "description": "Primary sans-serif font family"
+      },
+      "serif": {
+        "value": "Lora, Georgia, Cambria, 'Times New Roman', Times, serif",
+        "type": "fontFamily",
+        "description": "Serif font family for headings and emphasis"
+      },
+      "mono": {
+        "value": "IBM Plex Mono, 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', monospace",
+        "type": "fontFamily",
+        "description": "Monospace font for code and technical content"
+      },
+      "libre-baskerville": {
+        "value": "'Libre Baskerville', Georgia, Cambria, 'Times New Roman', Times, serif",
+        "type": "fontFamily",
+        "description": "Libre Baskerville font for italic emphasis"
+      }
+    },
+    "font-size": {
+      "xs": {
+        "value": "0.75rem",
+        "type": "fontSize",
+        "description": "Extra small text (12px)"
+      },
+      "sm": {
+        "value": "0.875rem",
+        "type": "fontSize",
+        "description": "Small text (14px)"
+      },
+      "base": {
+        "value": "1rem",
+        "type": "fontSize",
+        "description": "Base text size (16px)"
+      },
+      "lg": {
+        "value": "1.125rem",
+        "type": "fontSize",
+        "description": "Large text (18px)"
+      },
+      "xl": {
+        "value": "1.25rem",
+        "type": "fontSize",
+        "description": "Extra large text (20px)"
+      },
+      "2xl": {
+        "value": "1.5rem",
+        "type": "fontSize",
+        "description": "2X large text (24px)"
+      },
+      "3xl": {
+        "value": "1.875rem",
+        "type": "fontSize",
+        "description": "3X large text (30px)"
+      },
+      "4xl": {
+        "value": "2.25rem",
+        "type": "fontSize",
+        "description": "4X large text (36px)"
+      },
+      "5xl": {
+        "value": "3rem",
+        "type": "fontSize",
+        "description": "5X large text (48px)"
+      },
+      "6xl": {
+        "value": "3.75rem",
+        "type": "fontSize",
+        "description": "6X large text (60px)"
+      }
+    },
+    "font-weight": {
+      "normal": {
+        "value": "400",
+        "type": "fontWeight",
+        "description": "Normal font weight"
+      },
+      "medium": {
+        "value": "500",
+        "type": "fontWeight",
+        "description": "Medium font weight"
+      },
+      "semibold": {
+        "value": "600",
+        "type": "fontWeight",
+        "description": "Semi-bold font weight"
+      },
+      "bold": {
+        "value": "700",
+        "type": "fontWeight",
+        "description": "Bold font weight"
+      },
+      "extrabold": {
+        "value": "800",
+        "type": "fontWeight",
+        "description": "Extra bold font weight"
+      }
+    },
+    "line-height": {
+      "tight": {
+        "value": "1.25",
+        "type": "lineHeight",
+        "description": "Tight line height for headings"
+      },
+      "normal": {
+        "value": "1.5",
+        "type": "lineHeight",
+        "description": "Normal line height for body text"
+      },
+      "relaxed": {
+        "value": "1.75",
+        "type": "lineHeight",
+        "description": "Relaxed line height for readability"
+      }
+    },
+    "letter-spacing": {
+      "normal": {
+        "value": "0.025em",
+        "type": "letterSpacing",
+        "description": "Normal letter spacing"
+      },
+      "wide": {
+        "value": "0.05em",
+        "type": "letterSpacing",
+        "description": "Wide letter spacing for headings"
+      }
+    }
+  },
+
+  "spacing": {
+    "xs": {
+      "value": "0.25rem",
+      "type": "spacing",
+      "description": "Extra small spacing (4px)"
+    },
+    "sm": {
+      "value": "0.5rem",
+      "type": "spacing",
+      "description": "Small spacing (8px)"
+    },
+    "md": {
+      "value": "1rem",
+      "type": "spacing",
+      "description": "Medium spacing (16px)"
+    },
+    "lg": {
+      "value": "1.5rem",
+      "type": "spacing",
+      "description": "Large spacing (24px)"
+    },
+    "xl": {
+      "value": "2rem",
+      "type": "spacing",
+      "description": "Extra large spacing (32px)"
+    },
+    "2xl": {
+      "value": "3rem",
+      "type": "spacing",
+      "description": "2X large spacing (48px)"
+    },
+    "3xl": {
+      "value": "4rem",
+      "type": "spacing",
+      "description": "3X large spacing (64px)"
+    }
+  },
+
+  "border-radius": {
+    "none": {
+      "value": "0",
+      "type": "borderRadius",
+      "description": "No border radius"
+    },
+    "sm": {
+      "value": "0.125rem",
+      "type": "borderRadius",
+      "description": "Small border radius (2px)"
+    },
+    "base": {
+      "value": "0.35rem",
+      "type": "borderRadius",
+      "description": "Base border radius (5.6px)"
+    },
+    "md": {
+      "value": "0.5rem",
+      "type": "borderRadius",
+      "description": "Medium border radius (8px)"
+    },
+    "lg": {
+      "value": "0.75rem",
+      "type": "borderRadius",
+      "description": "Large border radius (12px)"
+    },
+    "xl": {
+      "value": "1rem",
+      "type": "borderRadius",
+      "description": "Extra large border radius (16px)"
+    },
+    "full": {
+      "value": "9999px",
+      "type": "borderRadius",
+      "description": "Full rounded (pill shape)"
+    }
+  },
+
+  "shadows": {
+    "sm": {
+      "value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "type": "shadow",
+      "description": "Small shadow for subtle elevation"
+    },
+    "base": {
+      "value": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+      "type": "shadow",
+      "description": "Base shadow for cards and components"
+    },
+    "md": {
+      "value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "type": "shadow",
+      "description": "Medium shadow for elevated components"
+    },
+    "lg": {
+      "value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      "type": "shadow",
+      "description": "Large shadow for prominent elevation"
+    },
+    "xl": {
+      "value": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      "type": "shadow",
+      "description": "Extra large shadow for modal and overlay elements"
+    },
+    "enhanced": {
+      "value": "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)",
+      "type": "shadow",
+      "description": "Enhanced shadow for special components"
+    }
+  },
+
+  "breakpoints": {
+    "sm": {
+      "value": "640px",
+      "type": "breakpoint",
+      "description": "Small screen breakpoint"
+    },
+    "md": {
+      "value": "768px",
+      "type": "breakpoint",
+      "description": "Medium screen breakpoint"
+    },
+    "lg": {
+      "value": "1024px",
+      "type": "breakpoint",
+      "description": "Large screen breakpoint"
+    },
+    "xl": {
+      "value": "1280px",
+      "type": "breakpoint",
+      "description": "Extra large screen breakpoint"
+    },
+    "2xl": {
+      "value": "1536px",
+      "type": "breakpoint",
+      "description": "2X large screen breakpoint"
+    }
+  },
+
+  "z-index": {
+    "tooltip": {
+      "value": "1000",
+      "type": "zIndex",
+      "description": "Z-index for tooltips and overlays"
+    },
+    "modal": {
+      "value": "2000",
+      "type": "zIndex",
+      "description": "Z-index for modals and dialogs"
+    }
+  },
+
+  "transitions": {
+    "fast": {
+      "value": "0.12s ease",
+      "type": "transition",
+      "description": "Fast transition for hover effects"
+    },
+    "normal": {
+      "value": "0.3s ease",
+      "type": "transition",
+      "description": "Normal transition for state changes"
+    },
+    "slow": {
+      "value": "0.5s ease",
+      "type": "transition",
+      "description": "Slow transition for complex animations"
+    }
+  }
+}
