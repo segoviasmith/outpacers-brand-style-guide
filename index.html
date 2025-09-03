@@ -59,18 +59,18 @@
   <style>
     :root{
       /* New Design System Variables */
-      --background: oklch(0.9821 0 0);
-      --foreground: oklch(0.4676 0 0);
+      --background: #F9F9F9;
+      --foreground: #101827;
       --card: oklch(1.0000 0 0);
       --card-foreground: oklch(0.2093 0.0323 262.4100);
       --popover: oklch(0.9911 0 0);
       --popover-foreground: oklch(0.2093 0.0323 262.4100);
-      --primary: oklch(0.4712 0.2526 282.7512);
+      --primary: #5524E0;
       --primary-foreground: oklch(1.0000 0 0);
       --secondary: oklch(0.9308 0.2282 123.1086);
       --secondary-foreground: oklch(0 0 0);
       --muted: oklch(0.9620 0.0180 272.3140);
-      --muted-foreground: oklch(0.4676 0 0);
+      --muted-foreground: #6B7280;
       --accent: oklch(0.9620 0.0180 272.3140);
       --accent-foreground: oklch(0 0 0);
       --destructive: oklch(0.9356 0.0309 17.7172);
@@ -78,18 +78,18 @@
       --border: oklch(0.9101 0.0126 271.2764);
       --input: oklch(0.9101 0.0126 271.2764);
       --ring: oklch(0.2546 0.1714 267.0249);
-      --radius: 1.4rem;
+      --radius: 0.35rem;
       
       /* Legacy Variables for Compatibility */
       --ink: var(--foreground);
       --body: var(--muted-foreground);
       --white: var(--background);
-      --header: var(--foreground);
+      --header: #000000;
       --primary-hover: oklch(0.4000 0.2000 282.7512);
       --primary-press: oklch(0.3500 0.1500 282.7512);
       --grad-blue: oklch(0.6000 0.2000 240.0000);
       --grad-purple: oklch(0.5000 0.2500 280.0000);
-      --chartreuse: oklch(0.9000 0.2000 120.0000);
+      --chartreuse: #CCFF04;
       --chip-bg: var(--card);
       --hairline: var(--border);
       --logo-gray: var(--muted-foreground);
@@ -476,18 +476,18 @@
       width: 16px;
       height: 16px;
       opacity: 0.7;
-      color: #374151;
+      color: #6B7280;
     }
     .copy-slab:hover svg{
       opacity: 1;
-      color: #111827;
+      color: #101827;
     }
     .slab-tooltip{
       position: absolute;
       bottom: calc(100% + 8px);
       left: 0;
-      background: var(--popover);
-      color: var(--popover-foreground);
+      background: #000000;
+      color: #FFFFFF;
       padding: 8px;
       border-radius: var(--radius-sm);
       font-size: 10px;
@@ -501,7 +501,7 @@
       z-index: 1000;
       line-height: 1.4;
       box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,0.12);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -512,7 +512,7 @@
       top: 100%;
       left: 16px;
       border: 6px solid transparent;
-      border-top-color: var(--popover);
+      border-top-color: #000000;
     }
     .slab-tooltip-content{
       flex: 1;
@@ -600,8 +600,8 @@
       margin-top: 8px;
       width: 250px;
       height: 250px;
-      background: var(--popover);
-      border: 1px solid var(--border);
+      background: #000000;
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: var(--radius-sm);
       box-shadow: var(--shadow-lg);
       opacity: 0;
@@ -617,7 +617,7 @@
       height: 100%;
       overflow-y: auto;
       padding: 16px;
-      color: var(--popover-foreground);
+      color: #FFFFFF;
       font-family: var(--font-mono);
       font-size: 11px;
       line-height: 1.4;
@@ -743,7 +743,7 @@
   <section class="mx-auto max-w-[1200px] px-6 pt-12 pb-6">
     <p class="badge inline-flex items-center gap-2">Brand Kit • v1.1</p>
       <h1 class="mt-5 ink text-5xl md:text-6xl font-extrabold leading-tight">
-    Learn to <span class="brand-gradient">Outthink</span> the <br/>competition through <span class="slab-square" style="line-height: 1; padding: 13px 1.4em 16px 16px;">Outskilling
+    Learn to <span style="font-family: 'Libre Baskerville', serif; font-style: italic; color: #FFFFFF;">Outthink</span> the <br/>competition through <span class="slab-square" style="line-height: 1; padding: 13px 1.4em 16px 16px;">Outskilling
       <div class="bolt"></div>
       <svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
