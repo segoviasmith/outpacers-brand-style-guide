@@ -1,0 +1,35 @@
+{
+  "name": "outpacers-brand-style-guide",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^4.1.1",
+    "@storybook/addon-a11y": "^9.1.4",
+    "@storybook/addon-docs": "^9.1.4",
+    "@storybook/addon-vitest": "^9.1.4",
+    "@storybook/react-vite": "^9.1.4",
+    "prop-types": "^15.8.1",
+    "storybook": "^9.1.4",
+    "vitest": "^3.2.4",
+    "@vitest/browser": "^3.2.4",
+    "playwright": "^1.55.0",
+    "@vitest/coverage-v8": "^3.2.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/segoviasmith/outpacers-brand-style-guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/segoviasmith/outpacers-brand-style-guide/issues"
+  },
+  "homepage": "https://github.com/segoviasmith/outpacers-brand-style-guide#readme",
+  "description": ""
+}
