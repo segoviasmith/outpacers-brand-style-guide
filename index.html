@@ -6,6 +6,7 @@
   <title>Outpacers • Brand Style Kit</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -705,6 +706,7 @@
     .chip{background:var(--chip-bg);border:1px solid var(--hairline);border-radius:16px;padding:14px 16px;display:flex;gap:10px;align-items:center}
     .label{font-size:.8rem;color:var(--muted-foreground);font-weight:500}
     .logo-slot{border:1px dashed var(--hairline);border-radius:12px;min-height:140px;display:flex;align-items:center;justify-content:center}
+    .logo-slot.bg-black{background:black;border:none;min-height:auto;padding:0.5rem;border-radius:6px}
     .h-card{border-radius:var(--radius-card);box-shadow:var(--shadow)}
     .grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
     .copy{cursor:pointer}
@@ -734,6 +736,7 @@
         <a class="hover:opacity-100" href="#colors">Colors</a>
         <a class="hover:opacity-100" href="#type">Typography</a>
         <a class="hover:opacity-100" href="#components">Components</a>
+        <a class="hover:opacity-100" href="#photos">Photos</a>
       </nav>
       <button class="btn btn-register">Download Kit</button>
     </div>
@@ -741,9 +744,9 @@
 
   <!-- Hero -->
   <section class="mx-auto max-w-[1200px] px-6 pt-12 pb-6">
-    <p class="badge inline-flex items-center gap-2">Brand Kit • v1.1</p>
+    <p class="badge inline-flex items-center gap-2">Brand Kit • v1.2</p>
       <h1 class="mt-5 ink text-5xl md:text-6xl font-extrabold leading-tight">
-    Learn to <span style="font-family: 'Libre Baskerville', serif; font-style: italic; color: #FFFFFF;">Outthink</span> the <br/>competition through <span class="slab-square" style="line-height: 1; padding: 13px 1.4em 16px 16px;">Outskilling
+    Learn to <span style="font-family: 'Libre Baskerville', serif; font-style: italic;">Outthink</span> the <br/>competition through <span class="slab-square" style="line-height: 1; padding: 13px 1.4em 16px 16px;">Outskilling
       <div class="bolt"></div>
       <svg class="bolt-fallback" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFFFFF"/>
@@ -753,7 +756,8 @@
     <p class="mt-4 max-w-2xl text-lg">This single page renders real tokens, components, and examples so designers, engineers, and marketing can build consistently—no guessing.</p>
     <div class="mt-6 flex flex-wrap gap-3">
       <button class="btn btn-primary">Primary (CTA)</button>
-      <button class="btn btn-register">Register</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-register">Featured (CTA)</button>
     </div>
   </section>
 
@@ -903,7 +907,7 @@
   <!-- Colors -->
   <section id="colors" class="mx-auto max-w-[1200px] px-6 py-10">
     <h2 class="ink text-3xl font-extrabold">Color System</h2>
-    <p class="mt-2 text-[var(--muted)]">Live tokens + copy-to-clipboard. Click a hex to copy.</p>
+    <p class="mt-2 label">Live tokens + copy-to-clipboard. Click a hex to copy.</p>
 
     <div class="mt-6 grid-auto">
       <!-- Primary Purple -->
@@ -937,12 +941,12 @@
         <div class="swatch h-28 w-full bg-[var(--primary-press)]"></div>
         <div class="mt-3 flex items-center justify-between">
           <div>
-            <div class="ink font-semibold">Primary Press/Focus</div>
-            <div class="label">Pressed state & focus rings</div>
+            <div class="ink font-semibold">Primary Focus Color</div>
+            <div class="label">Focus state styling</div>
           </div>
           <button class="copy text-sm font-mono" data-hex="--primary-press">#4A2BD1</button>
         </div>
-        <div class="mt-3"><button class="btn btn-primary" style="outline:4px solid var(--primary-press);outline-offset:2px">Focus Ring Demo</button></div>
+        <div class="mt-3"><button class="btn btn-primary">Primary Focus Color</button></div>
       </div>
 
       <!-- Chartreuse -->
@@ -955,7 +959,7 @@
           </div>
           <button class="copy text-sm font-mono" data-hex="--chartreuse">#DDF700</button>
         </div>
-        <div class="mt-3"><button class="btn btn-register">Register</button></div>
+        <div class="mt-3"><button class="btn btn-register">Register (Featured CTA)</button></div>
       </div>
 
       <!-- Gradient Accent -->
@@ -972,7 +976,7 @@
           </div>
         </div>
         <div class="mt-5 ink text-4xl md:text-5xl font-extrabold leading-tight">
-          <span class="ink">Outthink</span> <span class="ink">Everyone</span>
+          <span class="ink">Outthink</span> <span class="brand-gradient">Everyone</span>
         </div>
       </div>
     </div>
@@ -1831,13 +1835,13 @@ h1{
   text-wrap: balance;
 }</div>
             <span class="section-code-label">HTML:</span>
-            <div class="section-code-content">&lt;h1 class="text-4xl md:text-5xl font-semibold leading-tight"&gt;
-  Good, fast, cheap. &lt;span class="italic-emphasis"&gt;Pick two&lt;/span&gt;
+            <div class="section-code-content">&lt;h1 class="mixed-headline text-4xl md:text-5xl font-semibold leading-tight"&gt;
+  Good, fast, cheap. &lt;span class="italic-text"&gt;Pick two&lt;/span&gt;
 &lt;/h1&gt;</div>
           </div>
         </div>
       </div>
-      <div class="ink text-4xl md:text-5xl font-semibold leading-tight">Good, fast, cheap. <span class="italic-emphasis">Pick two</span></div>
+      <div class="mixed-headline ink text-4xl md:text-5xl font-semibold leading-tight">Good, fast, cheap. <span class="italic-text">Pick two</span></div>
       <p class="mt-3 text-lg">Italic Emphasis (36/48): Elegant serif italic for sophisticated contrast against semibold sans-serif.</p>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
         <div>
@@ -1946,20 +1950,28 @@ h1{
         <h3 class="ink font-semibold text-xl">Buttons</h3>
         <div class="mt-4 flex flex-wrap gap-3 items-center">
           <button class="btn btn-primary">Primary</button>
-          <button class="btn btn-primary" disabled style="opacity:.6">Primary (disabled)</button>
           <button class="btn btn-secondary">Secondary</button>
-          <button class="btn btn-register">Register</button>
+          <button class="btn btn-primary" disabled style="opacity:.6">Primary (disabled)</button>
+          <button class="btn btn-register">Featured</button>
         </div>
       </div>
 
       <!-- Chips -->
       <div class="token p-5">
-        <h3 class="ink font-semibold text-xl">Role Chips</h3>
+        <h3 class="ink font-semibold text-xl" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">Chips</h3>
         <div class="mt-4 flex flex-wrap gap-3">
-          <div class="chip"><div class="w-5 h-5 rounded-full bg-[var(--primary)] opacity-90"></div><span>Product Management</span></div>
-          <div class="chip"><div class="w-5 h-5 rounded-full bg-[var(--primary)] opacity-90"></div><span>Data Science</span></div>
-          <div class="chip"><div class="w-5 h-5 rounded-full bg-[var(--primary)] opacity-90"></div><span>Machine Learning</span></div>
-          <div class="chip" style="border-color:var(--primary);color:var(--primary)"><span>View all roles →</span></div>
+          <div class="px-3 py-2 bg-white rounded-full border border-[var(--border)]">
+            <span class="text-sm font-medium" style="color: #000000;">Product Management</span>
+          </div>
+          <div class="px-3 py-2 rounded-full border border-[var(--border)]" style="background-color: #EEE7FF;">
+            <span class="text-sm font-medium" style="color: #000000;">Data Science</span>
+          </div>
+          <div class="px-3 py-2 rounded-full border border-[var(--border)]" style="background-color: #EEF2FF;">
+            <span class="text-sm font-medium" style="color: #000000;">Machine Learning</span>
+          </div>
+          <div class="px-3 py-2 bg-white rounded-full border border-[var(--primary)]">
+            <span class="text-sm font-medium" style="color: var(--primary);">View all roles →</span>
+          </div>
         </div>
       </div>
 
@@ -1974,14 +1986,24 @@ h1{
       <div class="token p-5">
         <h3 class="ink font-semibold text-xl" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">Elevation & Radius</h3>
         <div class="mt-4 flex flex-col gap-4">
-          <div class="p-4 bg-white rounded-[var(--radius)] shadow-[var(--shadow-md)]">
-            <div class="label">Card • radius var(--radius) • medium shadow</div>
+          <div class="p-4 bg-white rounded-[0.35rem] shadow-[var(--shadow-md)]">
+            <div class="label">Card • radius 0.35rem • no shadow</div>
           </div>
-          <div class="p-4 bg-white rounded-[var(--radius-sm)] border border-[var(--border)]">
-            <div class="label">Panel • radius var(--radius-sm) • border</div>
+          <div class="p-4 bg-white rounded-[0.35rem] border border-[var(--border)]">
+            <div class="label">Panel • radius 0.35rem • border</div>
           </div>
-          <div class="p-4 bg-white rounded-full border border-[var(--border)]">
-            <div class="label">Pill • full radius</div>
+                      <div class="p-4 bg-white rounded-full border border-[var(--border)]">
+              <div class="label">StatusPill / Label • full radius</div>
+            </div>
+        </div>
+      </div>
+
+      <!-- AI Mock Interviewer Banner -->
+      <div class="token p-5">
+        <div class="p-6 rounded-[0.35rem]" style="background-color: #EEE7FF;">
+          <div class="text-lg font-medium" style="color: var(--primary);">
+            Level up your AI skills and start <em>Thinking in AI</em><br/>
+            to enhance your career. <span style="text-decoration: underline;">Try for free</span> →
           </div>
         </div>
       </div>
@@ -1990,13 +2012,13 @@ h1{
       <div class="token p-5">
         <h3 class="ink font-semibold text-xl" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">Accessibility Checks</h3>
         <div class="mt-4 grid sm:grid-cols-3 gap-4">
-          <div class="p-4 rounded-[var(--radius-sm)] bg-[var(--primary)] text-[var(--primary-foreground)]">
+          <div class="p-4 rounded-[0.35rem] bg-[var(--primary)] text-[var(--primary-foreground)]">
             <div class="text-sm">Primary button text ≥ AA ✔︎</div>
           </div>
-          <div class="p-4 rounded-[var(--radius-sm)] bg-[var(--chartreuse)] text-[var(--ink)]">
+          <div class="p-4 rounded-[0.35rem] bg-[var(--chartreuse)] text-[var(--ink)]">
             <div class="text-sm">Chartreuse slab w/ dark text ≥ AA ✔︎</div>
           </div>
-          <div class="p-4 rounded-[var(--radius-sm)] bg-white text-[var(--body)] border border-[var(--border)]">
+          <div class="p-4 rounded-[0.35rem] bg-white text-[var(--body)] border border-[var(--border)]">
             <div class="text-sm">Body text on white ≥ AA ✔︎</div>
           </div>
         </div>
@@ -2004,64 +2026,98 @@ h1{
     </div>
   </section>
 
+  <!-- Photographs Section -->
+  <section id="photos" class="mt-16 py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="ink text-4xl md:text-5xl font-bold leading-tight mb-4" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">Photographs</h2>
+        <p class="text-lg text-[var(--muted-foreground)] max-w-3xl mx-auto" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">
+          Black and white photography with clean, square corners for a timeless aesthetic
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Photo 1 -->
+        <div class="group relative overflow-hidden">
+          <div class="aspect-square bg-gray-200 rounded-none overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+              <span class="text-gray-600 font-medium">Photo Placeholder 1</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="group relative overflow-hidden">
+          <div class="aspect-square bg-gray-200 rounded-none overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center">
+              <span class="text-gray-600 font-medium">Photo Placeholder 2</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="group relative overflow-hidden">
+          <div class="aspect-square bg-gray-200 rounded-none overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-gray-500 to-gray-600 flex items-center justify-center">
+              <span class="text-gray-600 font-medium">Photo Placeholder 3</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="group relative overflow-hidden">
+          <div class="aspect-square bg-gray-200 rounded-none overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+              <span class="text-gray-600 font-medium">Photo Placeholder 4</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="group relative overflow-hidden">
+          <div class="aspect-square bg-gray-200 rounded-none overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center">
+              <span class="text-gray-600 font-medium">Photo Placeholder 5</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="group relative overflow-hidden">
+          <div class="aspect-square bg-gray-200 rounded-none overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-gray-500 to-gray-600 flex items-center justify-center">
+              <span class="text-gray-600 font-medium">Photo Placeholder 6</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-sm text-[var(--muted-foreground)]" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">
+          All photographs feature monochrome styling with sharp, square corners for a modern, minimalist aesthetic
+        </p>
+      </div>
+    </div>
+  </section>
+
   <footer class="mt-10 py-10 border-t border-[var(--border)]">
     <div class="mx-auto max-w-[1200px] px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <div class="flex items-center gap-3">
-          <!-- Filled version (White on Black) -->
-          <div class="bg-black p-2 rounded">
-            <svg class="w-8 h-8" viewBox="0 0 3000 3000" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
-                <path d="M2125 2681 c-97 -81 -1394 -1100 -1414 -1111 -9 -4 -14 -10 -11 -12 8 -6 497 -448 568 -513 35 -32 64 -56 65 -54 2 2 84 175 182 384 213 452 624 1280 631 1272 6 -6 -152 -360 -500 -1120 -131 -285 -236 -520 -234 -521 2 -2 39 -9 82 -16 43 -6 220 -38 392 -69 l314 -57 0 938 c0 516 -1 938 -2 938 -2 -1 -34 -27 -73 -59z m-78 -153 c-13 -24 -38 -68 -54 -98 -49 -89 -283 -554 -347 -690 -33 -69 -83 -174 -111 -235 -29 -60 -78 -164 -110 -230 -31 -66 -65 -139 -75 -161 -10 -23 -23 -45 -29 -49 -6 -3 -36 15 -65 42 -279 249 -486 440 -486 448 0 6 34 37 76 69 41 33 84 67 94 75 10 9 82 66 160 126 78 61 223 175 323 254 100 79 206 162 236 184 30 22 64 48 75 58 87 75 314 249 324 249 10 0 7 -13 -11 -42z m113 -786 c0 -447 -4 -803 -9 -811 -10 -15 -23 -14 -271 29 -58 10 -161 28 -230 40 -69 12 -137 26 -153 32 -33 13 -33 12 30 147 25 53 51 110 58 126 7 17 32 71 55 120 23 50 50 108 60 130 10 22 29 65 43 95 22 48 128 282 204 450 14 30 38 82 53 115 16 33 49 112 75 175 25 63 50 125 55 138 6 13 14 20 20 17 6 -4 9 -301 10 -803z"/>
-                <path d="M687 1236 l-147 -141 342 -58 c189 -32 357 -61 373 -64 17 -3 28 -4 25 -1 -20 18 -400 366 -420 384 l-25 22 -148 -142z m238 12 c44 -40 111 -103 150 -140 l70 -68 -32 0 c-17 0 -67 7 -110 15 -43 8 -135 24 -205 35 -129 20 -158 27 -158 38 0 11 184 192 196 192 6 0 46 -33 89 -72z"/>
-                <path d="M1360 924 c91 -101 454 -489 459 -491 3 -2 28 88 55 199 27 110 51 208 53 218 4 14 -5 18 -49 24 -50 7 -451 77 -528 92 l-35 7 45 -49z m511 -96 c10 -15 -54 -284 -71 -302 -5 -5 -21 3 -37 20 -24 25 -194 208 -290 313 -18 19 -28 38 -23 41 13 8 413 -61 421 -72z"/>
-              </g>
-            </svg>
-          </div>
-          <!-- Lined outline version (Black on White) -->
-          <div class="bg-white p-2 rounded border border-gray-300">
-            <svg class="w-8 h-8" viewBox="0 0 3000 3000" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-                <path d="M2125 2681 c-97 -81 -1394 -1100 -1414 -1111 -9 -4 -14 -10 -11 -12 8 -6 497 -448 568 -513 35 -32 64 -56 65 -54 2 2 84 175 182 384 213 452 624 1280 631 1272 6 -6 -152 -360 -500 -1120 -131 -285 -236 -520 -234 -521 2 -2 39 -9 82 -16 43 -6 220 -38 392 -69 l314 -57 0 938 c0 516 -1 938 -2 938 -2 -1 -34 -27 -73 -59z m-78 -153 c-13 -24 -38 -68 -54 -98 -49 -89 -283 -554 -347 -690 -33 -69 -83 -174 -111 -235 -29 -60 -78 -164 -110 -230 -31 -66 -65 -139 -75 -161 -10 -23 -23 -45 -29 -49 -6 -3 -36 15 -65 42 -279 249 -486 440 -486 448 0 6 34 37 76 69 41 33 84 67 94 75 10 9 82 66 160 126 78 61 223 175 323 254 100 79 206 162 236 184 30 22 64 48 75 58 87 75 314 249 324 249 10 0 7 -13 -11 -42z m113 -786 c0 -447 -4 -803 -9 -811 -10 -15 -23 -14 -271 29 -58 10 -161 28 -230 40 -69 12 -137 26 -153 32 -33 13 -33 12 30 147 25 53 51 110 58 126 7 17 32 71 55 120 23 50 50 108 60 130 10 22 29 65 43 95 22 48 128 282 204 450 14 30 38 82 53 115 16 33 49 112 75 175 25 63 50 125 55 138 6 13 14 20 20 17 6 -4 9 -301 10 -803z"/>
-                <path d="M687 1236 l-147 -141 342 -58 c189 -32 357 -61 373 -64 17 -3 28 -4 25 -1 -20 18 -400 366 -420 384 l-25 22 -148 -142z m238 12 c44 -40 111 -103 150 -140 l70 -68 -32 0 c-17 0 -67 7 -110 15 -43 8 -135 24 -205 35 -129 20 -158 27 -158 38 0 11 184 192 196 192 6 0 46 -33 89 -72z"/>
-                <path d="M1360 924 c91 -101 454 -489 459 -491 3 -2 28 88 55 199 27 110 51 208 53 218 4 14 -5 18 -49 24 -50 7 -451 77 -528 92 l-35 7 45 -49z m511 -96 c10 -15 -54 -284 -71 -302 -5 -5 -21 3 -37 20 -24 25 -194 208 -290 313 -18 19 -28 38 -23 41 13 8 413 -61 421 -72z"/>
-              </g>
-            </svg>
-          </div>
-          <!-- Copy button for SVG code -->
-          <button class="copy-slab" data-slab="footer-icons">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
-            </svg>
-            <div class="slab-tooltip">
-              <div class="slab-tooltip-content">
-                <div class="code-section">
-                  <div class="code-label">Filled Version (White):</div>
-                  <div class="code-content">&lt;svg class="w-5 h-5" viewBox="0 0 3000 3000" xmlns="http://www.w3.org/2000/svg"&gt;
-  &lt;g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none"&gt;
-    &lt;path d="M2125 2681 c-97 -81 -1394 -1100 -1414 -1111 -9 -4 -14 -10 -11 -12 8 -6 497 -448 568 -513 35 -32 64 -56 65 -54 2 2 84 175 182 384 213 452 624 1280 631 1272 6 -6 -152 -360 -500 -1120 -131 -285 -236 -520 -234 -521 2 -2 39 -9 82 -16 43 -6 220 -38 392 -69 l314 -57 0 938 c0 516 -1 938 -2 938 -2 -1 -34 -27 -73 -59z m-78 -153 c-13 -24 -38 -68 -54 -98 -49 -89 -283 -554 -347 -690 -33 -69 -83 -174 -111 -235 -29 -60 -78 -164 -110 -230 -31 -66 -65 -139 -75 -161 -10 -23 -23 -45 -29 -49 -6 -3 -36 15 -65 42 -279 249 -486 440 -486 448 0 6 34 37 76 69 41 33 84 67 94 75 10 9 82 66 160 126 78 61 223 175 323 254 100 79 206 162 236 184 30 22 64 48 75 58 87 75 314 249 324 249 10 0 7 -13 -11 -42z m113 -786 c0 -447 -4 -803 -9 -811 -10 -15 -23 -14 -271 29 -58 10 -161 28 -230 40 -69 12 -137 26 -153 32 -33 13 -33 12 30 147 25 53 51 110 58 126 7 17 32 71 55 120 23 50 50 108 60 130 10 22 29 65 43 95 22 48 128 282 204 450 14 30 38 82 53 115 16 33 49 112 75 175 25 63 50 125 55 138 6 13 14 20 20 17 6 -4 9 -301 10 -803z"/&gt;
-    &lt;path d="M687 1236 l-147 -141 342 -58 c189 -32 357 -61 373 -64 17 -3 28 -4 25 -1 -20 18 -400 366 -420 384 l-25 22 -148 -142z m238 12 c44 -40 111 -103 150 -140 l70 -68 -32 0 c-17 0 -67 7 -110 15 -43 8 -135 24 -205 35 -129 20 -158 27 -158 38 0 11 184 192 196 192 6 0 46 -33 89 -72z"/&gt;
-    &lt;path d="M1360 924 c91 -101 454 -489 459 -491 3 -2 28 88 55 199 27 110 51 208 53 218 4 14 -5 18 -49 24 -50 7 -451 77 -528 92 l-35 7 45 -49z m511 -96 c10 -15 -54 -284 -71 -302 -5 -5 -21 3 -37 20 -24 25 -194 208 -290 313 -18 19 -28 38 -23 41 13 8 413 -61 421 -72z"/&gt;
-  &lt;/g&gt;
-&lt;/svg&gt;</div>
-                </div>
-                <div class="code-section">
-                  <div class="code-label">Lined Outline Version (Black):</div>
-                  <div class="code-content">&lt;svg class="w-5 h-5" viewBox="0 0 3000 3000" xmlns="http://www.w3.org/2000/svg"&gt;
-  &lt;g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"&gt;
-    &lt;path d="M2125 2681 c-97 -81 -1394 -1100 -1414 -1111 -9 -4 -14 -10 -11 -12 8 -6 497 -448 568 -513 35 -32 64 -56 65 -54 2 2 84 175 182 384 213 452 624 1280 631 1272 6 -6 -152 -360 -500 -1120 -131 -285 -236 -520 -234 -521 2 -2 39 -9 82 -16 43 -6 220 -38 392 -69 l314 -57 0 938 c0 516 -1 938 -2 938 -2 -1 -34 -27 -73 -59z m-78 -153 c-13 -24 -38 -68 -54 -98 -49 -89 -283 -554 -347 -690 -33 -69 -83 -174 -111 -235 -29 -60 -78 -164 -110 -230 -31 -66 -65 -139 -75 -161 -10 -23 -23 -45 -29 -49 -6 -3 -36 15 -65 42 -279 249 -486 440 -486 448 0 6 34 37 76 69 41 33 84 67 94 75 10 9 82 66 160 126 78 61 223 175 323 254 100 79 206 162 236 184 30 22 64 48 75 58 87 75 314 249 324 249 10 0 7 -13 -11 -42z m113 -786 c0 -447 -4 -803 -9 -811 -10 -15 -23 -14 -271 29 -58 10 -161 28 -230 40 -69 12 -137 26 -153 32 -33 13 -33 12 30 147 25 53 51 110 58 126 7 17 32 71 55 120 23 50 50 108 60 130 10 22 29 65 43 95 22 48 128 282 204 450 14 30 38 82 53 115 16 33 49 112 75 175 25 63 50 125 55 138 6 13 14 20 20 17 6 -4 9 -301 10 -803z"/&gt;
-    &lt;path d="M687 1236 l-147 -141 342 -58 c189 -32 357 -61 373 -64 17 -3 28 -4 25 -1 -20 18 -400 366 -420 384 l-25 22 -148 -142z m238 12 c44 -40 111 -103 150 -140 l70 -68 -32 0 c-17 0 -67 7 -110 15 -43 8 -135 24 -205 35 -129 20 -158 27 -158 38 0 11 184 192 196 192 6 0 46 -33 89 -72z"/&gt;
-    &lt;path d="M1360 924 c91 -101 454 -489 459 -491 3 -2 28 88 55 199 27 110 51 208 53 218 4 14 -5 18 -49 24 -50 7 -451 77 -528 92 l-35 7 45 -49z m511 -96 c10 -15 -54 -284 -71 -302 -5 -5 -21 3 -37 20 -24 25 -194 208 -290 313 -18 19 -28 38 -23 41 13 8 413 -61 421 -72z"/&gt;
-  &lt;/g&gt;
-&lt;/svg&gt;</div>
-                </div>
-              </div>
-            </div>
-          </button>
+        <!-- App Favicon Logo -->
+        <div class="logo-slot bg-black">
+          <svg width="24" height="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" version="1.1" style="max-width: 24px;">
+            <path d="M 437.634 0.000 L 430.873 0.000 L 428.620 3.606 L 425.465 3.606 L 423.211 7.211 L 420.056 7.211 L 417.803 10.817 L 414.648 10.817 L 410.592 16.225 L 407.437 16.225 L 405.183 19.831 L 402.028 19.831 L 399.775 23.437 L 396.620 23.437 L 394.366 27.042 L 391.211 27.042 L 387.155 32.451 L 384.000 32.451 L 381.746 36.056 L 378.592 36.056 L 376.338 39.662 L 373.183 39.662 L 370.930 43.268 L 367.775 43.268 L 363.718 48.676 L 356.958 50.479 L 352.901 55.887 L 349.746 55.887 L 347.493 59.493 L 344.338 59.493 L 340.282 64.901 L 337.127 64.901 L 334.873 68.507 L 331.718 68.507 L 329.465 72.113 L 326.310 72.113 L 324.056 75.718 L 320.901 75.718 L 318.648 79.324 L 315.493 79.324 L 313.239 82.930 L 310.085 82.930 L 306.028 88.338 L 302.873 88.338 L 300.620 91.944 L 297.465 91.944 L 295.211 95.549 L 292.056 95.549 L 288.000 100.958 L 284.845 100.958 L 282.592 104.563 L 279.437 104.563 L 277.183 108.169 L 274.028 108.169 L 271.775 111.775 L 268.620 111.775 L 264.563 117.183 L 261.408 117.183 L 259.155 120.789 L 256.000 120.789 L 253.746 124.394 L 250.592 124.394 L 248.338 128.000 L 245.183 128.000 L 241.127 133.408 L 237.972 133.408 L 235.718 137.014 L 232.563 137.014 L 230.310 140.620 L 227.155 140.620 L 224.901 144.225 L 221.746 144.225 L 217.690 149.634 L 214.535 149.634 L 212.282 153.239 L 209.127 153.239 L 206.873 156.845 L 203.718 156.845 L 201.465 160.451 L 198.310 160.451 L 194.254 165.859 L 191.099 165.859 L 187.042 171.268 L 180.282 173.070 L 176.225 178.479 L 173.070 178.479 L 170.817 182.085 L 167.662 182.085 L 165.408 185.690 L 162.254 185.690 L 160.000 189.296 L 156.845 189.296 L 152.789 194.704 L 149.634 194.704 L 147.380 198.310 L 144.225 198.310 L 140.169 203.718 L 137.014 203.718 L 134.761 207.324 L 131.606 207.324 L 129.352 210.930 L 126.197 210.930 L 123.944 214.535 L 120.789 214.535 L 118.535 218.141 L 115.380 218.141 L 113.127 221.746 L 109.972 221.746 L 105.915 227.155 L 102.761 227.155 L 100.507 230.761 L 97.352 230.761 L 97.352 232.113 L 93.746 234.366 L 93.746 237.521 L 100.958 243.380 L 100.958 246.535 L 122.592 266.817 L 122.592 269.972 L 133.408 279.437 L 133.408 282.592 L 137.014 284.845 L 137.014 288.000 L 135.211 288.451 L 135.211 291.606 L 133.408 292.056 L 122.141 304.676 L 118.986 304.676 L 107.718 317.296 L 104.563 317.296 L 91.493 331.718 L 88.338 331.718 L 78.873 342.535 L 75.718 342.535 L 75.718 343.887 L 70.310 347.944 L 70.310 352.901 L 71.662 352.901 L 72.113 354.704 L 78.873 354.704 L 79.324 356.507 L 87.887 356.507 L 88.338 358.310 L 98.704 358.310 L 99.155 360.113 L 105.915 360.113 L 106.366 361.915 L 114.930 361.915 L 115.380 363.718 L 127.549 363.718 L 128.000 365.521 L 136.563 365.521 L 137.014 367.324 L 143.775 367.324 L 144.225 369.127 L 154.592 369.127 L 155.042 370.930 L 161.803 370.930 L 162.254 372.732 L 183.437 374.535 L 183.887 376.338 L 192.451 376.338 L 192.901 378.141 L 201.465 378.141 L 201.915 379.944 L 208.676 379.944 L 209.127 381.746 L 215.887 381.746 L 216.338 383.549 L 226.704 383.549 L 227.155 385.352 L 230.310 385.352 L 232.563 388.958 L 235.718 388.958 L 236.169 390.761 L 241.577 394.817 L 241.577 397.972 L 272.225 427.268 L 272.225 430.423 L 306.479 463.324 L 306.479 466.479 L 340.732 499.380 L 340.732 502.535 L 342.085 502.535 L 349.746 511.549 L 354.704 511.549 L 354.704 510.197 L 356.507 509.746 L 356.507 499.380 L 358.310 498.930 L 358.310 490.366 L 360.113 489.915 L 360.113 479.549 L 361.915 479.099 L 361.915 463.324 L 363.718 462.873 L 363.718 454.310 L 365.521 453.859 L 365.521 443.493 L 367.324 443.042 L 369.127 421.859 L 370.930 421.408 L 370.930 418.254 L 372.732 417.803 L 373.183 416.000 L 387.155 416.000 L 387.606 417.803 L 396.169 417.803 L 396.620 419.606 L 406.986 419.606 L 407.437 421.408 L 417.803 421.408 L 418.254 423.211 L 426.817 423.211 L 427.268 425.014 L 439.437 425.014 L 439.437 423.662 L 441.239 423.211 L 441.239 322.704 L 439.437 322.254 L 439.437 171.268 L 437.634 170.817 Z" fill="#FFFFFF"/>
+          </svg>
         </div>
         <span class="font-semibold ink" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">Outpacers Brand Kit</span>
       </div>
-      <div class="text-sm text-[var(--muted-foreground)]" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">© 2025 Outpacers. Vibe coded with Lovable/Cursor using Tailwind.</div>
+      <div class="text-sm text-[var(--muted-foreground)]" style="font-family: var(--font-sans); letter-spacing: var(--tracking-normal)">© 2025 Outpacers. Vibe coded with Lovable/Cursor using Tailwind | Shadcn/ui.</div>
     </div>
   </footer>
 
